@@ -1,0 +1,34 @@
+{
+    "signup": "ସାଇନ୍ ଅପ୍ କରନ୍ତୁ",
+    "AquaboticsAccount": "ଆକ୍ବାବୋଟିକ୍ସ ଆକାଉଣ୍ଟ୍",
+    "yourname": "ତୁମର ନାମ",
+    "yourphonenumber": "ତୁମ ଫୋନ ନମ୍ବର",
+    "youremail": "ତୁମ ଇ-ମେଲ",
+    "password": "ପାସୱାର୍ଡ",
+    "condition":"ମୁଁ ଗ୍ରହଣ କରେ",
+    "condition2":"ସର୍ତ୍ତାବଳୀ",
+    "createanaccount": "ଗୋଟିଏ ଖାତା ଖୋଲ",
+    "alreadyhaveanaccount": "ପୂର୍ବରୁ ଏକ ଖାତା ଅଛି କି?",
+    "loginhere": "ଏଠାରେ ଲଗଇନ୍ କରନ୍ତୁ",
+
+
+    "login": "ଭିତରକୁ ଯାଅ",
+    "rememberme":"ମୋତେ ମନେ ରଖିବେ",
+    "forgotpassword": "ପାସୱାର୍ଡ଼ ଭୁଲି ଗଲେ କି?",
+    "signin": "ଚୁକ୍ତି କରିବା",
+    "donthaveanaccount": "ଏପର୍ଯ୍ୟନ୍ତ ଏକ ଖାତା ନାହିଁ କି?",
+
+
+    "dashboard": "ଡ୍ୟାସବୋର୍ଡ",
+    "settings": "ସେଟିଂସମୂହ",
+    "changepassword":"ପାସୱାର୍ଡ ପରିବର୍ତ୍ତନ କରନ୍ତୁ",
+    "logout": "ପ୍ରସ୍ଥାନ କର",
+    "nopondyet":"ଆପଣଙ୍କର କୌଣସି ପୋଖରୀ ନାହିଁ ତଥାପି ଆପଣଙ୍କର ପୋଖରୀ ଯୋଡିବାକୁ ଦୟାକରି ଆଡମିନି ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ |",
+    "mypondlist": "ମୋର ପୋଖରୀ ତାଲିକା",
+
+
+    "totalarea":"ସମୁଦାୟ କ୍ଷେତ୍ର",
+    "weather":"ପାଣିପାଗ",
+    "todays":"ଆଜି",
+    "6daysweather":"6 ଦିନର ପାଣିପାଗ"
+  }

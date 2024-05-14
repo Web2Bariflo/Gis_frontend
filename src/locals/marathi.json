@@ -1,0 +1,34 @@
+{
+    "signup": "साइन अप करा",
+    "AquaboticsAccount": "एक्वाबोटिक्स खाते",
+    "yourname": "तुमचे नाव",
+    "yourphonenumber": "तुझा दूरध्वनी क्रमांक",
+    "youremail": "आपला ई - मेल",
+    "password": "पासवर्ड",
+    "condition":"मी स्वीकारतो", 
+    "condition2":"नियम आणि अटी",
+    "createanaccount": "खाते तयार करा",
+    "alreadyhaveanaccount": "आधीपासूनच एक खाते आहे?",
+    "loginhere": "येथे लॉगिन करा",
+
+
+    "login": "लॉग इन करा",
+    "rememberme":"माझी आठवण ठेवा",
+    "forgotpassword": "पासवर्ड विसरलात?",
+    "signin": "साइन इन करा",
+    "donthaveanaccount": "अजून खाते नाही?",
+
+
+    "dashboard": "डॅशबोर्ड",
+    "settings": "सेटिंग्ज",
+    "changepassword":"पासवर्ड बदला",
+    "logout": "बाहेर पडणे",
+    "nopondyet":"आपल्याकडे अद्याप कोणतेही तलाव नाहीत, कृपया आपले तलाव जोडण्यासाठी प्रशासकाशी संपर्क साधा",
+    "mypondlist": "माझ्या तलावांची यादी",
+
+
+    "totalarea":"एकूण क्षेत्रफळ",
+    "weather":"हवामान",
+    "todays":"आजचे",
+    "6daysweather":"6 दिवस हवामान"
+  }

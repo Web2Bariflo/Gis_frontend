@@ -1,0 +1,37 @@
+{
+    "signup": "Sign up",
+    "AquaboticsAccount": "Aquabotics Account",
+    "yourname": "Your Name",
+    "yourphonenumber": "Your Phone Number",
+    "youremail": "Your email",
+    "password": "Password",
+    "condition":"I accept the", 
+    "condition2":"Terms and Conditions",
+    "createanaccount": "Create an account",
+    "alreadyhaveanaccount": "Already have an account?",
+    "loginhere": "Login here",
+
+
+    "login": "Log in",
+    "rememberme":"Remember me",
+    "forgotpassword": "Forgot password?",
+    "signin": "Sign in",
+    "donthaveanaccount": "Don’t have an account yet?",
+
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "changepassword":"Change Password",
+    "logout": "Log out",
+    "nopondyet":"You have no ponds Yet Please Contact admin to add your ponds",
+    "mypondlist": "My Ponds List",
+
+    "totalarea":"Total Area",
+    "weather":"Weather",
+    "todays":"Todays",
+    "6daysweather":"6 days weather"
+
+  }
+
+  
+
+

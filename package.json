@@ -1,0 +1,47 @@
+{
+  "name": "jsproject",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "apexcharts": "^3.49.0",
+    "axios": "^1.6.8",
+    "chart.js": "^4.4.2",
+    "i18next": "^23.11.1",
+    "i18next-browser-languagedetector": "^7.2.1",
+    "leaflet": "^1.9.4",
+    "leaflet-draw": "^1.0.4",
+    "razorpay": "^2.9.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-hook-form": "^7.51.1",
+    "react-hot-toast": "^2.4.1",
+    "react-i18next": "^14.1.0",
+    "react-razorpay": "^2.0.1",
+    "react-router-dom": "^6.22.3",
+    "react-toastify": "^10.0.5",
+    "request": "^2.88.2",
+    "tw-elements-react": "^1.0.0-alpha2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.64",
+    "@types/react-dom": "^18.2.21",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.18",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "postcss": "^8.4.36",
+    "tailwindcss": "^3.4.1",
+    "terser": "^5.30.3",
+    "vite": "^5.1.6"
+  }
+}

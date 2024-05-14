@@ -1,0 +1,32 @@
+{
+    "signup": "साइन अप करें",
+    "AquaboticsAccount": "एक्वाबोटिक्स खाता",
+    "yourname": "आपका नाम",
+    "yourphonenumber": "आपका फोन नंबर",
+    "youremail": "आपका ईमेल",
+    "password": "पासवर्ड",
+    "condition":"मुझे स्वीकार है", 
+    "condition2":"नियम और शर्तें",
+    "createanaccount": "खाता बनाएं",
+    "alreadyhaveanaccount": "क्या आपके पास पहले से एक खाता मौजूद है?",
+    "loginhere": "यहां लॉगिन करें",
+
+    "login": "लॉग इन करें",
+    "rememberme":"मुझे याद करो",
+    "forgotpassword": "पासवर्ड भूल गए?",
+    "signin": "दाखिल करना",
+    "donthaveanaccount": "अब तक कोई खाता नहीं है?",
+
+
+    "dashboard": "डैशबोर्ड",
+    "settings": "समायोजन",
+    "changepassword":"पासवर्ड बदलें",
+    "logout": "लॉग आउट",
+    "nopondyet":"आपके पास अभी तक कोई तालाब नहीं है कृपया अपने तालाब जोड़ने के लिए व्यवस्थापक से संपर्क करें",
+    "mypondlist": "मेरे तालाबों की सूची",
+
+    "totalarea":"कुल क्षेत्रफल",
+    "weather":"मौसम",
+    "todays":"आज का",
+    "6daysweather":"6 दिन का मौसम"
+  }
