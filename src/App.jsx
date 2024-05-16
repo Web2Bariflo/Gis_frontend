@@ -11,6 +11,7 @@ import UserPageOne from './components/userpages/UserPageOne';
 import ChangePassword from './components/ChangePassword';
 import ForgetPassword from './components/ForgetPassword';
 import ChooseLanguage from './components/ChooseLanguage';
+import PondDetails from './components/adminPages/PondDetails';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route element={<PrivateRoute />}>
             <Route element={<AdminPageOne />} path='/admin-dashboard' />
             <Route element={<AdminBasePage />} path="/admin-add-pond/:id" />
+            <Route element={<PondDetails />} path="/pond-details/:id" />
             <Route element={<UserPageOne />} path="/user-dashboard" />
             <Route element={<UserDashboard />} path="/user-pond-details/:id" />
             <Route element={<ChangePassword />} path="/change-password/:id" />

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react'
 import URL from '../../URL';
+import PondDetails from './PondDetails';
 
 const PondDetailsModel = ({ onClose, setOpenModel, user }) => {
 
@@ -9,6 +10,8 @@ const PondDetailsModel = ({ onClose, setOpenModel, user }) => {
     const [showDropdown, setShowDropdown] = useState(false)
     const [dropDownIndex, setDropdownIndex] = useState(null)
     const [userPonds, setUserPonds] = useState()
+    const [openPondDetailsModel,setOpenPondDetailsModel] = useState(false)
+    const [pondId,setPondId] = useState(null)
     const BASEURL = URL();
 
 
@@ -34,6 +37,7 @@ const PondDetailsModel = ({ onClose, setOpenModel, user }) => {
     const fetchUserAllPonds = async () => {
         try {
             const res = await axios.get(`${BASEURL}/adminpond/${user}/`);
+            console.log(res.data);
             setUserPonds(res.data);
             setPondName(res.data[0].name)
 
@@ -49,6 +53,10 @@ const PondDetailsModel = ({ onClose, setOpenModel, user }) => {
         setShowDropdown(true)
         setDropdownIndex(index)
     };
+    const pondDetails=(id)=>{
+        setPondId(id)
+        setOpenPondDetailsModel(!openPondDetailsModel)
+    }
 
     return (
         <div className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 mx-auto z-50 flex justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition ease-in-out delay-150" style={{ background: "rgba(0,0,0,0.6)" }}>
@@ -100,6 +108,9 @@ const PondDetailsModel = ({ onClose, setOpenModel, user }) => {
                                                         )
                                                         }
                                                     </table>
+                                                    <button className="text-white inline-flex w-full justify-center bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={()=>pondDetails(pond.id)}>
+                                                    Show Details
+                                                </button>
                                                 </div>)
                                             }
                                         </div>
@@ -115,6 +126,19 @@ const PondDetailsModel = ({ onClose, setOpenModel, user }) => {
                     </div>
                 </div>
             </div>
+                    {/* Open Pond Details in model */}
+                    {
+                        openPondDetailsModel ? <div className="absolute w-[90%] h-max top-5 md:p-4 pt-0 " style={{ backgroundColor: 'rgb(238, 255, 239)' }}>
+                            <div className='flex justify-end px-4 mt-2 md:pt-0'><i className="fa-solid fa-xmark text-xl cursor-pointer" onClick={()=>setOpenPondDetailsModel(!openPondDetailsModel)}></i></div>
+                        <PondDetails onClose={pondDetails} pondId={pondId}/>
+                        <div className='flex justify-center px-4 mb-2'>
+
+                        <button className="text-white inline-flex w-full justify-center bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm md:px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={()=>setOpenPondDetailsModel(!openPondDetailsModel)}>
+                            Close
+                        </button>
+                        </div>
+                    </div>: null
+                    }
         </div>
     )
 }

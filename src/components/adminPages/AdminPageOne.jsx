@@ -8,6 +8,7 @@ import { toast } from 'react-toastify';
 import Imgupload from '../Imgupload';
 import PondDetailsModel from './PondDetailsModel';
 import URL from '../../URL';
+import PondDetails from './PondDetails';
 
 const AdminPageOne = () => {
     const [userList, setUserList] = useState([]);
@@ -27,6 +28,7 @@ const AdminPageOne = () => {
   const [userEmail,setUserEmail] = useState()
   const [openUserPondsModel, setOpenUserPondsModel] = useState(false)
   const [userPonds, setUserPonds] = useState()
+
   const BASEURL = URL();
 
 
@@ -418,6 +420,7 @@ const AdminPageOne = () => {
             {
                 openUserPondsModel ? <PondDetailsModel onClose={viewUserPonds} setOpenModel={setOpenUserPondsModel} user={userPonds}/> : null
             }
+            
 
 
 
