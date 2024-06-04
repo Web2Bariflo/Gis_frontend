@@ -9,6 +9,8 @@ import { toast } from 'react-toastify'
 import { useTranslation } from 'react-i18next'
 import { t } from 'i18next'
 import URL from '../../URL'
+import { Sidebar } from '../Sidebar'
+import { ResponsNav } from '../ResponsNav'
 
 const UserPageOne = () => {
     const navigate = useNavigate()
@@ -32,8 +34,8 @@ const UserPageOne = () => {
         // Access the "Mob" property from the auth object
         const id = auth.Mob;
         
-        setUser(auth.Name);
-        setUserEmail(auth.Email);
+        setUser(auth.name);
+        setUserEmail(auth.email);
         setUserId(auth.Mob)
         try {
             const res = await axios.get(`${BASEURL}/userponds/${id}/`);
@@ -86,7 +88,7 @@ const UserPageOne = () => {
     return (
         <Layout title={"User Dashboard"}>
             <div className='flex'>
-                <aside style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }} className=" hidden md:flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
+                {/* <aside style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }} className=" hidden md:flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
                     <div className='flex flex-col justify-center mb-0 items-center'>
                         <img src={logo} alt="logo" className='w-1/4'/>
                          <p className='text-md font-semibold leading-tight tracking-tight text-white md:text-md dark:text-gray-500 text-center' style={{paddingTop: "0px"}}>{t('AquaboticsAccount')}</p>
@@ -129,7 +131,9 @@ const UserPageOne = () => {
                             </a>
                         </nav>
                     </div>
-                </aside>
+                </aside> */}
+                <Sidebar handleSettingOpen ={handleSettingOpen }  handleLogOut={handleLogOut} userId={userId} user={user} userEmail={userEmail} openSettings={openSettings} handlePassword={handlePassword}/>
+                <ResponsNav />
                 <aside className='absolute p-2 ml-3 md:hidden'>
                     <div className='w-max text-2xl bg-green-600 p-2 px-4 rounded-md text-white dark:bg-green-500 dark:text-gray-200 cursor-pointer hover:bg-green-700 shadow-lg shadow-green-500' onClick={handleOpenSideNav}>
                         <i className="fa-solid fa-bars-staggered animate-bounce"></i>

@@ -12,6 +12,8 @@ import ChangePassword from './components/ChangePassword';
 import ForgetPassword from './components/ForgetPassword';
 import ChooseLanguage from './components/ChooseLanguage';
 import PondDetails from './components/adminPages/PondDetails';
+import { Analytics } from './components/userpages/Analytics';
+import Taskassign from './components/userpages/Taskassign';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
             <Route element={<PondDetails />} path="/pond-details/:id" />
             <Route element={<UserPageOne />} path="/user-dashboard" />
             <Route element={<UserDashboard />} path="/user-pond-details/:id" />
+            <Route element={<Analytics />} path="/analytics" />
+            <Route element={<Taskassign />} path="/task-asign" />
             <Route element={<ChangePassword />} path="/change-password/:id" />
           </Route>
           <Route element={<ForgetPassword />}  path="/forget-password" />
