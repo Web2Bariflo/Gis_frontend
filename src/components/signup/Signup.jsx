@@ -162,7 +162,7 @@ const Signup = () => {
                                             </div>
                                             <div className="ml-3 text-sm">
                                                 <label htmlFor="terms" className="font-light text-gray-500 dark:text-gray-300">
-                                                    {t('condition')} <a className="font-medium text-primary-600 hover:underline dark:text-primary-500" href="">{t('condition2')}</a>
+                                                    {t('condition')} <a className="font-medium text-primary-600 hover:underline dark:text-primary-500" href="#">{t('condition2')}</a>
                                                 </label>
                                             </div>
                                         </div>

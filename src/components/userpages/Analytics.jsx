@@ -207,11 +207,12 @@ export const Analytics = () => {
                 Map Views
               </button>
               <div className="w-full flex flex-col md:flex-row mx-auto align-middle justify-center gap-8 my-6 p-6">
-                <div className="w-full flex gap-6 p-6 shadow-lg" style={{ backgroundColor: "rgb(238, 255, 239)" }}>
+                {/* <div className="w-full flex gap-6 p-6 shadow-lg" style={{ backgroundColor: "rgb(238, 255, 239)" }}> */}
+                <div className="w-full flex gap-6 p-6 shadow-lg" style={{ backgroundColor: "#f2f2f2" }}>
                   <img src={energy} alt="..." />
                   <h2 className="text-lg font-medium">Total Energy Cost</h2>
                 </div>
-                <div className="w-full flex gap-6 p-6 shadow-lg" style={{ backgroundColor: "rgb(238, 255, 239)" }}>
+                <div className="w-full flex gap-6 p-6 shadow-lg" style={{ backgroundColor: "#f2f2f2" }}>
                   <img src={feed} alt="..." />
                   <h2 className="text-lg font-medium">Total Feed Cost</h2>
                 </div>

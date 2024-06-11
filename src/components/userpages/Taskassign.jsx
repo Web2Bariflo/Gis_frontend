@@ -54,11 +54,11 @@ const Taskassign = () => {
     <section className="flex gap-1">
       <Sidebar />
       <ResponsNav />
-      <div className="w-full flex flex-wrap justify-center mx-auto my-auto gap-2">
+      <div className="w-full flex align-middle items-center relative flex-col flex-wrap justify-center mx-auto my-auto gap-2">
         {
-          pondsData?.length > 0 ? pondsData.map((pond,id)=><button className={`w-40 h-40 p-6 shadow-xl rounded-md text-2xl font-bold hover:bg-green-700 ${isPondSelected(pond.id) ? 'bg-green-700 text-white' : 'bg-[#EEFFEF]'}`} key={id} onClick={()=>handlePondSelect(pond.name,pond.id)}>{pond.name}</button>):<h2 className='text-3xl'>No Pond Added Yet!</h2>
+          pondsData?.length > 0 ? pondsData.map((pond,id)=><button className={`w-40 h-40 p-6 shadow-xl rounded-md text-2xl font-bold hover:bg-[#c2e7ff] ${isPondSelected(pond.id) ? 'bg-[#c2e7ff] text-gray-700' : 'bg-[#cac9c9]'}`} key={id} onClick={()=>handlePondSelect(pond.name,pond.id)}>{pond.name}</button>):<h2 className='text-3xl'>No Pond Added Yet!</h2>
         }
-        <button className='w-max h-max bg-green-700 text-white p-5 px-7 rounded-lg absolute bottom-8 right-8 hover:bg-green-500' onClick={handleModelShow}>Task Assign</button>
+        <button className='w-max h-max bottom-2 bg-[#cac9c9] text-gray-700 hover:text-gray-700 p-4 px-5 rounded-lg hover:bg-[#c2e7ff] mt-6' onClick={handleModelShow}>Task Assign</button>
       </div>
     </section>
     {

@@ -45,7 +45,7 @@ const Imgupload = ({id}) => {
     },[handleInputChange]);
     return (
         <>
-            <div className="relative w-24">
+            <div className="relative w-24 mx-auto ml-[47px]">
                 <img className="object-cover w-24 h-24 mx-2 rounded-full" src={`${BASEURL}${avatar}`} alt="avatar" />
                 <div className="w-24 h-24 group hover:bg-gray-200 opacity-60 rounded-full absolute flex justify-center items-center cursor-pointer transition duration-500 top-0 left-2">
                     <img className="hidden group-hover:block w-10" src="https://www.svgrepo.com/show/33565/upload.svg" alt="logo" onClick={handleImageClick}/>

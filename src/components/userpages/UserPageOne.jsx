@@ -20,6 +20,7 @@ const UserPageOne = () => {
     const [userEmail, setUserEmail] = useState()
     const [openSideNav,setOpenSideNav] = useState(false)
     const [userId, setUserId] = useState()
+    const [isHovered, setIsHovered] = useState(false);
     const {t} = useTranslation()
     const BASEURL = URL();
 
@@ -175,20 +176,28 @@ const UserPageOne = () => {
 
                 <section className="bg-white dark:bg-gray-900 w-full mt-4 md:mt-0">
                     <div className="container px-6 py-12 mx-auto">
-                        <h1 className="text-2xl font-semibold text-gray-800 lg:text-3xl dark:text-white">{t('mypondlist')}</h1>
+                        <h1 className="text-2xl font-semibold text-gray-700 lg:text-3xl dark:text-white">{t('mypondlist')}</h1>
 
-                        <div className="mt-8 space-y-8 lg:mt-12">
+                        <div className="mt-8 space-y-8 lg:mt-12 flex flex-wrap gap-1">
                             {
                                 ponds && ponds.length > 0 ? (ponds.map((pond) => {
                                     return (
-                                        <div className="p-8 bg-gray-100 rounded-lg dark:bg-gray-800" style={{ backgroundColor: 'rgb(238, 255, 239)' }} key={pond.id}>
-                                            <button className="flex  justify-between w-full" onClick={() => pondDetails(pond.id)} >
+                                        // <div className="p-8 bg-gray-100 rounded-lg dark:bg-gray-800" style={{ backgroundColor: 'rgb(238, 255, 239)' }} key={pond.id}>
+                                        <div className="p-8 bg-gray-100 rounded-lg dark:bg-gray-800 w-1/2" style={{
+                                            backgroundColor: '#f2f2f2',
+                                            boxShadow: isHovered
+                                              ? '0px 1px 3px 0px rgba(60,64,67,0.3), 0px 4px 8px 3px rgba(60,64,67,0.15)'
+                                              : 'none',
+                                            transition: 'box-shadow 0.3s ease-in-out',
+                                          }} key={pond.id} onMouseEnter={() => setIsHovered(true)}
+                                        onMouseLeave={() => setIsHovered(false)}>
+                                            <button className="flex  justify-between align-middle items-center w-full" onClick={() => pondDetails(pond.id)} >
                                                 <div className="inline-block p-0 text-white rounded-lg w-28">
                                                     <img src={Aqua} alt="aqua" className='rounded-lg w-full h-20' />
                                                 </div>
                                                 <h1 className="font-semibold text-gray-700 dark:text-white">{pond.name}</h1>
 
-                                                <span className="text-white bg-blue-500 rounded-full">
+                                                <span className="text-white bg-gray-700 rounded-full">
                                                     <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                                                     </svg>

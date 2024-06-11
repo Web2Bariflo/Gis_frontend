@@ -185,7 +185,7 @@ const TaskassignModel = ({ selectedPond, setShowTaskModel,setSelectedPond }) => 
         ))}
       </div>
       <div className="w-full flex justify-center items-center flex-col lg:flex-row lg:space-x-4 md:justify-between lg:justify-around mx-auto mt-4 space-y-4 md:space-y-4 flex-wrap">
-        <div className="relative inline-block text-left w-full lg:w-auto">
+        <div className="relative inline-block text-left w-full lg:w-auto mt-4">
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}

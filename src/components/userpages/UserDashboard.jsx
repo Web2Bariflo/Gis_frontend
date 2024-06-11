@@ -476,7 +476,7 @@ const UserDashboard = () => {
               </div>
               <button className='absolute bg-white p-2 text-black rounded-sm border border-black z-1 right-0 md:right-2 top-2' onClick={toggleSatelliteView}>Map Views</button>
               <div className='flex justify-between absolute bottom-0'>
-                <div className='my-2 text-xl font-bold p-3 text-white'>{t('totalarea')}: {parseFloat(totalPondArea).toFixed(2)} acres</div>
+                <div className='my-2 text-xl font-bold p-3 text-gray-500'>{t('totalarea')}: {parseFloat(totalPondArea).toFixed(2)} acres</div>
               </div>
             </div>
             <div className='p-4 md:w-5/12 flex flex-col md:space-y-3 space-y-2 my-14 md:my-0'  style={{
@@ -568,14 +568,16 @@ const UserDashboard = () => {
             </div>
           </div>
           <div className="max-w-full w-full lg:max-w-full lg:flex bg-white mt-4 p-8">
-            <div className='p-4 w-full flex gap-4 justify-around flex-col md:flex-row' style={{ backgroundColor: 'rgb(238, 255, 239)' }}>
+            {/* <div className='p-4 w-full flex gap-4 justify-around flex-col md:flex-row' style={{ backgroundColor: 'rgb(238, 255, 239)' }}> */}
+            <div className='p-4 w-full flex gap-4 justify-around flex-col md:flex-row' style={{ backgroundColor: '#f2f2f2' }}>
 
               <div className="flex flex-col w-full md:w-6/12 gap-4">
                 <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
-                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-white" style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }}>
+                  {/* <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-white" style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }}> */}
+                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>AQUATIC MACROPHYTES</h2>
                     {
-                      AQUATIC_MACROPYTES ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('AQUATIC_MACROPYTES')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer' onClick={() => { paymentGateway(100000, 'AQUATIC_MACROPYTES') }}>PAY</button>
+                      AQUATIC_MACROPYTES ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('AQUATIC_MACROPYTES')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' onClick={() => { paymentGateway(100000, 'AQUATIC_MACROPYTES') }}>PAY</button>
                     }
                   </div>
                   {
@@ -587,16 +589,16 @@ const UserDashboard = () => {
                         <svg data-tooltip-target="tooltip-hover" data-tooltip-trigger="click" className="h-8 w-8 text-red-400 ml-[85%] relative cursor-pointer inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={toggleTooltip}>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg><p className='text-red-400 flex justify-center cursor-pointer inline'>Disclaimer</p>
-                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">Aquatic macrophytes are large, visible, and often rooted plants that grow in bodies of water such as lakes, rivers, ponds, and wetlands. They are a diverse group of plants that can include various species of submerged, floating, and emergent plants.</span>
+                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-gray-700 group-hover:scale-100">Aquatic macrophytes are large, visible, and often rooted plants that grow in bodies of water such as lakes, rivers, ponds, and wetlands. They are a diverse group of plants that can include various species of submerged, floating, and emergent plants.</span>
                       </div>
                     </div> : ""
                   }
                 </div>
                 <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
-                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-white" style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }}>
+                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>CDOM</h2>
                     {
-                      CDOM ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('CDOM')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer' onClick={() => { paymentGateway(200000, 'CDOM') }}>PAY</button>
+                      CDOM ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('CDOM')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' onClick={() => { paymentGateway(200000, 'CDOM') }}>PAY</button>
                     }
                   </div>
                   {
@@ -609,16 +611,16 @@ const UserDashboard = () => {
                         <svg data-tooltip-target="tooltip-hover" data-tooltip-trigger="click" className="h-8 w-8 text-red-400 ml-[85%] relative cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={toggleTooltip}>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg><p className='text-red-400 flex justify-center cursor-pointer'>Disclaimer</p>
-                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">CDOM stands for Chromophoric Dissolved Organic Matter. It refers to a group of organic compounds found in water that absorb light, particularly in the blue and ultraviolet regions of the electromagnetic spectrum.</span>
+                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-gray-700 group-hover:scale-100">CDOM stands for Chromophoric Dissolved Organic Matter. It refers to a group of organic compounds found in water that absorb light, particularly in the blue and ultraviolet regions of the electromagnetic spectrum.</span>
                       </div>
                     </div> : ""
                   }
                 </div>
                 <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
-                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-white" style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }}>
+                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>GCI</h2>
                     {
-                      GCI ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('GCI')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer' onClick={() => { paymentGateway(300000, 'GCI') }}>PAY</button>
+                      GCI ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('GCI')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' onClick={() => { paymentGateway(300000, 'GCI') }}>PAY</button>
                     }
                   </div>
                   {
@@ -630,16 +632,16 @@ const UserDashboard = () => {
                         <svg data-tooltip-target="tooltip-hover" data-tooltip-trigger="click" className="h-8 w-8 text-red-400 ml-[85%] relative cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={toggleTooltip}>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg><p className='text-red-400 flex justify-center cursor-pointer'>Disclaimer</p>
-                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">The Green Chlorophyll Index (GCI) is a vegetation index used in remote sensing to assess the chlorophyll content of vegetation, particularly in agricultural applications.</span>
+                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-gray-700 group-hover:scale-100">The Green Chlorophyll Index (GCI) is a vegetation index used in remote sensing to assess the chlorophyll content of vegetation, particularly in agricultural applications.</span>
                       </div>
                     </div> : ""
                   }
                 </div>
                 <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
-                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-white" style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }}>
+                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>NDCI</h2>
                     {
-                      NDCI ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('NDCI')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer' onClick={() => { paymentGateway(400000, 'NDCI') }}>PAY</button>
+                      NDCI ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('NDCI')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' onClick={() => { paymentGateway(400000, 'NDCI') }}>PAY</button>
                     }
                   </div>
                   {
@@ -651,16 +653,16 @@ const UserDashboard = () => {
                         <svg data-tooltip-target="tooltip-hover" data-tooltip-trigger="click" className="h-8 w-8 text-red-400 ml-[85%] relative cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={toggleTooltip}>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg><p className='text-red-400 flex justify-center cursor-pointer'>Disclaimer</p>
-                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">NDCI stands for Normalized Difference Chlorophyll Index. It is a vegetation index used in remote sensing to estimate the concentration of chlorophyll in vegetation, particularly in aquatic and wetland environments.</span>
+                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-gray-700 group-hover:scale-100">NDCI stands for Normalized Difference Chlorophyll Index. It is a vegetation index used in remote sensing to estimate the concentration of chlorophyll in vegetation, particularly in aquatic and wetland environments.</span>
                       </div>
                     </div> : ""
                   }
                 </div>
                 <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
-                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-white" style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }}>
+                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>NDTI</h2>
                     {
-                      NDTI ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('NDTI')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer' onClick={() => { paymentGateway(500000, 'NDTI') }}>PAY</button>
+                      NDTI ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('NDTI')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' onClick={() => { paymentGateway(500000, 'NDTI') }}>PAY</button>
                     }
                   </div>
                   {
@@ -672,7 +674,7 @@ const UserDashboard = () => {
                         <svg data-tooltip-target="tooltip-hover" data-tooltip-trigger="click" className="h-8 w-8 text-red-400 ml-[85%] relative cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={toggleTooltip}>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg><p className='text-red-400 flex justify-center cursor-pointer'>Disclaimer</p>
-                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">NDTI stands for Normalized Difference Turbidity Index. It is a spectral index used in remote sensing to estimate the turbidity or sediment concentration in water bodies, particularly in rivers, lakes, and coastal areas.</span>
+                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-gray-700 group-hover:scale-100">NDTI stands for Normalized Difference Turbidity Index. It is a spectral index used in remote sensing to estimate the turbidity or sediment concentration in water bodies, particularly in rivers, lakes, and coastal areas.</span>
                       </div>
                     </div> : ""
                   }
@@ -680,10 +682,10 @@ const UserDashboard = () => {
               </div>
               <div className="flex flex-col w-full md:w-6/12 gap-4">
                 <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
-                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-white" style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }}>
+                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>NDVI</h2>
                     {
-                      NDVI ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('NDVI')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer' onClick={() => { paymentGateway(600000, 'NDVI') }}>PAY</button>
+                      NDVI ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('NDVI')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' onClick={() => { paymentGateway(600000, 'NDVI') }}>PAY</button>
                     }
                   </div>
                   {
@@ -695,16 +697,16 @@ const UserDashboard = () => {
                         <svg data-tooltip-target="tooltip-hover" data-tooltip-trigger="click" className="h-8 w-8 text-red-400 ml-[85%] relative cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={toggleTooltip}>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg><p className='text-red-400 flex justify-center cursor-pointer'>Disclaimer</p>
-                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">NDVI stands for Normalized Difference Vegetation Index. It is a widely used vegetation index in remote sensing to assess the health, density, and vigor of vegetation cover over large areas, such as agricultural fields, forests, and natural ecosystems.</span>
+                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-gray-700 group-hover:scale-100">NDVI stands for Normalized Difference Vegetation Index. It is a widely used vegetation index in remote sensing to assess the health, density, and vigor of vegetation cover over large areas, such as agricultural fields, forests, and natural ecosystems.</span>
                       </div>
                     </div> : ""
                   }
                 </div>
                 <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
-                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-white" style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }}>
+                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>TSS</h2>
                     {
-                      TSS ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('TSS')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer' onClick={() => { paymentGateway(700000, 'TSS') }}>PAY</button>
+                      TSS ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('TSS')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' onClick={() => { paymentGateway(700000, 'TSS') }}>PAY</button>
                     }
                   </div>
                   {
@@ -716,16 +718,16 @@ const UserDashboard = () => {
                         <svg data-tooltip-target="tooltip-hover" data-tooltip-trigger="click" className="h-8 w-8 text-red-400 ml-[85%] relative cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={toggleTooltip}>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg><p className='text-red-400 flex justify-center cursor-pointer'>Disclaimer</p>
-                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">TSS stands for Total Suspended Solids. It refers to the concentration of solid particles that are suspended in water and are not dissolved. These particles can include both organic and inorganic matter, such as silt, clay, plankton, algae, and other debris.</span>
+                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-gray-700 group-hover:scale-100">TSS stands for Total Suspended Solids. It refers to the concentration of solid particles that are suspended in water and are not dissolved. These particles can include both organic and inorganic matter, such as silt, clay, plankton, algae, and other debris.</span>
                       </div>
                     </div> : ""
                   }
                 </div>
                 <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
-                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-white" style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }}>
+                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>DO</h2>
                     {
-                      dissolved_oxygen ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('dissolved_oxygen')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer' onClick={() => { paymentGateway(800000, 'dissolved_oxygen') }}>PAY</button>
+                      dissolved_oxygen ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('dissolved_oxygen')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' onClick={() => { paymentGateway(800000, 'dissolved_oxygen') }}>PAY</button>
                     }
                   </div>
                   {
@@ -737,16 +739,16 @@ const UserDashboard = () => {
                         <svg data-tooltip-target="tooltip-hover" data-tooltip-trigger="click" className="h-8 w-8 text-red-400 ml-[85%] relative cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={toggleTooltip}>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg><p className='text-red-400 flex justify-center cursor-pointer'>Disclaimer</p>
-                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">DO stands for Dissolved Oxygen. It refers to the amount of oxygen gas (O2) dissolved in water. Dissolved oxygen is essential for the survival of aquatic organisms, as it is required for respiration, metabolism, and other physiological processes.</span>
+                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-gray-700 group-hover:scale-100">DO stands for Dissolved Oxygen. It refers to the amount of oxygen gas (O2) dissolved in water. Dissolved oxygen is essential for the survival of aquatic organisms, as it is required for respiration, metabolism, and other physiological processes.</span>
                       </div>
                     </div> : ""
                   }
                 </div>
                 <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
-                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-white" style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }}>
+                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>NDWI</h2>
                     {
-                      ndwi_values ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('ndwi_values')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer' onClick={() => { paymentGateway(900000, 'NDWI') }}>PAY</button>
+                      ndwi_values ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('ndwi_values')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' onClick={() => { paymentGateway(900000, 'NDWI') }}>PAY</button>
                     }
                   </div>
                   {
@@ -758,16 +760,16 @@ const UserDashboard = () => {
                         <svg data-tooltip-target="tooltip-hover" data-tooltip-trigger="click" className="h-8 w-8 text-red-400 ml-[85%] relative cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={toggleTooltip}>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg><p className='text-red-400 flex justify-center cursor-pointer'>Disclaimer</p>
-                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">Normalized Difference Water Index (NDWI) can refer to one of two remote sensing-derived indexes related to liquid water: to monitor changes in water content of leaves, and to monitor changes related to water content in water bodies.</span>
+                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-gray-700 group-hover:scale-100">Normalized Difference Water Index (NDWI) can refer to one of two remote sensing-derived indexes related to liquid water: to monitor changes in water content of leaves, and to monitor changes related to water content in water bodies.</span>
                       </div>
                     </div> : ""
                   }
                 </div>
                 <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
-                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-white" style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }}>
+                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>PH</h2>
                     {
-                      ph_values ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('ph_values')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer' onClick={() => { paymentGateway(1000000, 'ph') }}>PAY</button>
+                      ph_values ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('ph_values')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' onClick={() => { paymentGateway(1000000, 'ph') }}>PAY</button>
                     }
                   </div>
                   {
@@ -779,7 +781,7 @@ const UserDashboard = () => {
                         <svg data-tooltip-target="tooltip-hover" data-tooltip-trigger="click" className="h-8 w-8 text-red-400 ml-[85%] relative cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={toggleTooltip}>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg><p className='text-red-400 flex justify-center cursor-pointer'>Disclaimer</p>
-                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">pH stands for "potential of hydrogen." It is a measure of the acidity or alkalinity of a solution, indicating the concentration of hydrogen ions (H+) present in the solution.</span>
+                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-gray-700 group-hover:scale-100">pH stands for "potential of hydrogen." It is a measure of the acidity or alkalinity of a solution, indicating the concentration of hydrogen ions (H+) present in the solution.</span>
                       </div>
                     </div> : ""
                   }
