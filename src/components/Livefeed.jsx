@@ -31,7 +31,7 @@ const Livefeed = ({setSocketData}) => {
     <>
     <div
             className="w-full md:w-4/12 h-[98vh] text-black p-3 pb-0 shadow-lg "
-            style={{ backgroundColor: "rgb(238, 255, 239)" }}
+            style={{ backgroundColor: "#f2f2f2" }}
           >
             <h2 className="text-3xl font-bold tracking-wide my-1 text-orange-600">
               Live Feed

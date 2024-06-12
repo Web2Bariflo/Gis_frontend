@@ -34,7 +34,7 @@ export const Sidebar = ({handleSettingOpen  }) => {
         setUser(auth.name);
         setUserEmail(auth.email);
         setUserId(auth.Mob)
-        console.log(user, userEmail);
+        // console.log(user, userEmail);
     },[])
  // Logout User
  const handleLogOut = () => {

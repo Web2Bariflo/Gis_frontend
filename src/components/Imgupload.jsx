@@ -13,33 +13,35 @@ const Imgupload = ({id}) => {
         avatarInputRef.current.click();
     }
 
-    const handleInputChange = async(e) => {
-        const file = e.target.files[0];
-        const formData = new FormData();
-        formData.append('photo', file);
-        try {
-            const res = await axios.post(`${BASEURL}/photoupload/${id}/`,formData) 
-            if(res.data.message){
-                toast.success(res.data.message)
-            }
-            fetchPhotoData()
-        } catch (error) {
-            console.log(error);
-        }
-        avatarInputRef.current.classList.add('hidden');
-
-    }
     const fetchPhotoData = async() => {
+       if(id){
         try {
             const res = await axios.get(`${BASEURL}/photosend/${id}/`);
             if(res.data.photo){
-
+                
                 setAvatar(res.data.photo);
-            }
-        } catch (error) {
-            console.log(error);
-        }
-    }
+                }
+                } catch (error) {
+                    console.log(error);
+                }
+       }
+     }
+   const handleInputChange = async(e) => {
+                            const file = e.target.files[0];
+                            const formData = new FormData();
+                            formData.append('photo', file);
+                            try {
+                                const res = await axios.post(`${BASEURL}/photoupload/${id}/`,formData) 
+                                if(res.data.message){
+                                    toast.success(res.data.message)
+                                }
+                                fetchPhotoData()
+                            } catch (error) {
+                                console.log(error);
+                            }
+                            avatarInputRef.current.classList.add('hidden');
+                    
+                        }
     useEffect(()=>{
         fetchPhotoData();
     },[handleInputChange]);
