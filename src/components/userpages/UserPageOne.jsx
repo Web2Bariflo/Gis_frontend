@@ -20,7 +20,7 @@ const UserPageOne = () => {
     const [userEmail, setUserEmail] = useState()
     const [openSideNav,setOpenSideNav] = useState(false)
     const [userId, setUserId] = useState()
-    const [isHovered, setIsHovered] = useState(false);
+    const [hoveredPondId, setHoveredPondId] = useState(null);
     const {t} = useTranslation()
     const BASEURL = URL();
 
@@ -178,19 +178,19 @@ const UserPageOne = () => {
                     <div className="container px-6 py-12 mx-auto">
                         <h1 className="text-2xl font-semibold text-gray-700 lg:text-3xl dark:text-white">{t('mypondlist')}</h1>
 
-                        <div className="mt-8 space-y-8 lg:mt-12 flex flex-wrap gap-1">
+                        <div className="mt-8 lg:mt-12 flex flex-wrap gap-4">
                             {
                                 ponds && ponds.length > 0 ? (ponds.map((pond) => {
                                     return (
                                         // <div className="p-8 bg-gray-100 rounded-lg dark:bg-gray-800" style={{ backgroundColor: 'rgb(238, 255, 239)' }} key={pond.id}>
-                                        <div className="p-8 bg-gray-100 rounded-lg dark:bg-gray-800 w-1/2" style={{
+                                        <div className="p-8 bg-gray-100 rounded-lg dark:bg-gray-800 w-[45%]" style={{
                                             backgroundColor: '#f2f2f2',
-                                            boxShadow: isHovered
+                                            boxShadow: hoveredPondId == pond.id 
                                               ? '0px 1px 3px 0px rgba(60,64,67,0.3), 0px 4px 8px 3px rgba(60,64,67,0.15)'
                                               : 'none',
                                             transition: 'box-shadow 0.3s ease-in-out',
-                                          }} key={pond.id} onMouseEnter={() => setIsHovered(true)}
-                                        onMouseLeave={() => setIsHovered(false)}>
+                                          }} key={pond.id} onMouseEnter={() => setHoveredPondId(pond.id)}
+                                          onMouseLeave={() => setHoveredPondId(null)}>
                                             <button className="flex  justify-between align-middle items-center w-full" onClick={() => pondDetails(pond.id)} >
                                                 <div className="inline-block p-0 text-white rounded-lg w-28">
                                                     <img src={Aqua} alt="aqua" className='rounded-lg w-full h-20' />

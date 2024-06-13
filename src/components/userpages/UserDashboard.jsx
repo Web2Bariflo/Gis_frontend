@@ -476,7 +476,7 @@ const UserDashboard = () => {
               </div>
               <button className='absolute bg-white p-2 text-black rounded-sm border border-black z-1 right-0 md:right-2 top-2' onClick={toggleSatelliteView}>Map Views</button>
               <div className='flex justify-between absolute bottom-0'>
-                <div className='my-2 text-xl font-bold p-3 text-gray-500'>{t('totalarea')}: {parseFloat(totalPondArea).toFixed(2)} acres</div>
+                <div className='my-2 text-xl font-bold p-3 text-gray-800'>{t('totalarea')}: {parseFloat(totalPondArea).toFixed(2)} acres</div>
               </div>
             </div>
             <div className='p-4 md:w-5/12 flex flex-col md:space-y-3 space-y-2 my-14 md:my-0'  style={{
