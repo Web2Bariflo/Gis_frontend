@@ -58,10 +58,10 @@ const Taskassign = () => {
         <div className="flex flex-wrap gap-2 justify-center">
 
         {
-          pondsData?.length > 0 ? pondsData.map((pond,id)=><button className={`w-40 h-40 p-6 shadow-xl rounded-md text-2xl font-bold hover:bg-[#c2e7ff] text-gray-800 ${isPondSelected(pond.id) ? 'bg-[#c2e7ff] text-gray-700' : 'bg-[#cac9c9]'}`} key={id} onClick={()=>handlePondSelect(pond.name,pond.id)}>{pond.name}</button>):<h2 className='text-3xl'>No Pond Added Yet!</h2>
+          pondsData?.length > 0 ? pondsData.map((pond,id)=><button className={`w-40 h-40 p-6 rounded-md text-2xl font-bold hover:bg-[#c2e7ff] hover:shadow-xl text-gray-800 ${isPondSelected(pond.id) ? 'bg-[#c2e7ff] text-gray-700 shadow-xl' : 'bg-[#cac9c9]'}`} key={id} onClick={()=>handlePondSelect(pond.name,pond.id)}>{pond.name}</button>):<h2 className='text-3xl'>No Pond Added Yet!</h2>
         }
         </div>
-        <button className='w-max h-max bottom-2 bg-[#cac9c9] text-gray-700 hover:text-gray-700 p-4 px-5 rounded-lg hover:bg-[#c2e7ff] mt-6 font-bold' onClick={handleModelShow}> Assign</button>
+        <button className='w-max h-max bottom-2 bg-[#c2e7ff] text-gray-700 hover:text-gray-700 p-4 px-5 rounded-lg hover:bg-[#b4ddf8] mt-6 font-bold' onClick={handleModelShow}> Assign</button>
       </div>
     </section>
     {

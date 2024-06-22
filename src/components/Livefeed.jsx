@@ -1,9 +1,11 @@
 import React, { useEffect, useState,useRef  } from 'react'
 import sunny from '../assets/img/weather_icon/sunny.png'
 import useWebSocket from '../hooks/useWebSocket';
+import URL from '../URL';
 
 const Livefeed = ({setSocketData}) => {
     const [userId,setUserId] = useState()
+    const BASEURL = URL()
     const authString = localStorage.getItem('auth')
     // Parse the JSON string into an object
     const auth = JSON.parse(authString);
@@ -19,7 +21,7 @@ const Livefeed = ({setSocketData}) => {
         setUserId(auth.Mob)
     }, [])
     // console.log(user);
-    const { data, isConnected } = useWebSocket(`ws://20.244.51.20/ws/${user}/`);
+    const { data, isConnected } = useWebSocket(`ws://192.168.0.144:8000/ws/${user}/`);
     console.log(data);
     setSocketData(data)
     useEffect(() => {
