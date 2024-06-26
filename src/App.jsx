@@ -14,6 +14,8 @@ import ChooseLanguage from './components/ChooseLanguage';
 import PondDetails from './components/adminPages/PondDetails';
 import { Analytics } from './components/userpages/Analytics';
 import Taskassign from './components/userpages/Taskassign';
+import { Canvas } from './components/adminPages/Canvas';
+import { Cluster } from './components/userpages/Cluster';
 
 function App() {
   return (
@@ -22,8 +24,10 @@ function App() {
           <Route element={<PrivateRoute />}>
             <Route element={<AdminPageOne />} path='/admin-dashboard' />
             <Route element={<AdminBasePage />} path="/admin-add-pond/:id" />
+            <Route element={<Canvas />} path="/canvas-draw" />
             <Route element={<PondDetails />} path="/pond-details/:id" />
-            <Route element={<UserPageOne />} path="/user-dashboard" />
+            <Route element={<UserPageOne />} path="/user-dashboard/:clusterid" />
+            <Route element={<Cluster />} path="/user-cluster-list" />
             <Route element={<UserDashboard />} path="/user-pond-details/:id" />
             <Route element={<Analytics />} path="/analytics" />
             <Route element={<Taskassign />} path="/task-asign" />

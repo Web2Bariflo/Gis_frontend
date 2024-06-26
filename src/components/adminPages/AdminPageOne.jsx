@@ -9,6 +9,7 @@ import Imgupload from '../Imgupload';
 import PondDetailsModel from './PondDetailsModel';
 import URL from '../../URL';
 import PondDetails from './PondDetails';
+import { LogoutPopUp } from '../LogoutPopUp';
 
 const AdminPageOne = () => {
     const [userList, setUserList] = useState([]);
@@ -28,12 +29,14 @@ const AdminPageOne = () => {
   const [userEmail,setUserEmail] = useState()
   const [openUserPondsModel, setOpenUserPondsModel] = useState(false)
   const [userPonds, setUserPonds] = useState()
+  const [isOpen, setIsOpen] = useState(false)
+
 
   const BASEURL = URL();
 
 
   useEffect(()=>{
-    console.log(BASEURL);
+    // console.log(BASEURL);
   },[])
 
     // VIewUser Data
@@ -122,8 +125,9 @@ const AdminPageOne = () => {
     };
     // Logout User
     const handleLogOut = () => {
-        localStorage.removeItem('auth');
-        navigate('/');
+        setIsOpen(true);
+        // localStorage.removeItem('auth');
+        // navigate('/');
     };
     // mobileview navebar
     const handleOpenSideNav = () => {
@@ -141,8 +145,8 @@ const AdminPageOne = () => {
             <div className='flex'>
                 <aside style={{ backgroundColor: '#F6F8FC' }} className="hidden  md:flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
                     <div className='flex flex-col justify-center mb-0 items-center'>
-                        <img src={logo} alt="logo" className='w-1/4' />
-                        <p className='text-md font-semibold leading-tight tracking-tight text-gray-500 md:text-md dark:text-gray-200 text-center' style={{ paddingTop: "0px" }}>Aquabotics Account</p>
+                        {/* <img src={logo} alt="logo" className='w-1/4' /> */}
+                        {/* <p className='text-md font-semibold leading-tight tracking-tight text-gray-500 md:text-md dark:text-gray-200 text-center' style={{ paddingTop: "0px" }}>Aquabotics Account</p> */}
                     </div>
 
                     <div className="flex flex-col items-center mt-6 mx-1">
@@ -167,7 +171,7 @@ const AdminPageOne = () => {
                                     <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
 
-                                <span className="mx-4 font-medium">Accounts</span>
+                                <span className="mx-4 font-medium">Clusters</span>
                             </div>
 
 
@@ -179,6 +183,12 @@ const AdminPageOne = () => {
 
                                 <span className="mx-4 font-medium">Settings</span>
                             </div>
+                            <div className="flex items-center px-4 py-2 mt-5 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700 cursor-pointer" onClick={()=>navigate('/canvas-draw')}>
+                                <i class="fa-solid fa-pencil"></i>
+
+                                <span className="mx-4 font-medium">Draw Picture</span>
+                            </div>
+
                             <div className="flex items-center px-4 py-2 mt-5 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700 cursor-pointer" onClick={handleLogOut}>
                                 <i className="fa-solid fa-arrow-right-from-bracket"></i>
 
@@ -420,9 +430,9 @@ const AdminPageOne = () => {
             {
                 openUserPondsModel ? <PondDetailsModel onClose={viewUserPonds} setOpenModel={setOpenUserPondsModel} user={userPonds}/> : null
             }
-            
-
-
+            {
+                isOpen && <LogoutPopUp setIsOpen={setIsOpen}/>
+            }
 
         </Layout>
     )

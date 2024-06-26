@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Layout from '../Layout/Layout'
 import Aqua from '../../assets/img/aqua.webp'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import logo from '../../assets/img/logo.png';
 import Imgupload from '../Imgupload'
@@ -23,6 +23,7 @@ const UserPageOne = () => {
     const [hoveredPondId, setHoveredPondId] = useState(null);
     const {t} = useTranslation()
     const BASEURL = URL();
+    const {clusterid} = useParams()
 
 
 
@@ -39,7 +40,7 @@ const UserPageOne = () => {
         setUserEmail(auth.email);
         setUserId(auth.Mob)
         try {
-            const res = await axios.get(`${BASEURL}/userponds/${id}/`);
+            const res = await axios.get(`${BASEURL}/userponds/${clusterid}/`);
             if(res.data.ponds.length > 0) {
                 setPonds(res.data.ponds);
             }else{

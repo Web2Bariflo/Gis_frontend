@@ -51,7 +51,7 @@ const Signup = () => {
                 if (res.data.message === "You are successfully entered the admin page...") {
                     navigate('/admin-dashboard');
                 } else {
-                    navigate('/user-dashboard');
+                    navigate('/user-cluster-list');
                 }
                 toast.success(res.data.message);
                 e.target.reset();
