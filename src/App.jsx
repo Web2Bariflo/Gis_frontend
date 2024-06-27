@@ -16,6 +16,7 @@ import { Analytics } from './components/userpages/Analytics';
 import Taskassign from './components/userpages/Taskassign';
 import { Canvas } from './components/adminPages/Canvas';
 import { Cluster } from './components/userpages/Cluster';
+import { ClusterView } from './components/adminPages/ClusterView';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route element={<PrivateRoute />}>
             <Route element={<AdminPageOne />} path='/admin-dashboard' />
             <Route element={<AdminBasePage />} path="/admin-add-pond/:id" />
+            <Route element={<ClusterView />} path="/admin-cluster-view" />
             <Route element={<Canvas />} path="/canvas-draw" />
             <Route element={<PondDetails />} path="/pond-details/:id" />
             <Route element={<UserPageOne />} path="/user-dashboard/:clusterid" />
