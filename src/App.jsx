@@ -19,6 +19,7 @@ import { Cluster } from './components/userpages/Cluster';
 import { ClusterView } from './components/adminPages/ClusterView';
 import { ToastContainer } from 'react-toastify';
 import { TaskAssignClusters } from './components/userpages/TaskAssignClusters';
+import PondList from './components/adminPages/PondList';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route element={<AdminPageOne />} path='/admin-dashboard' />
             <Route element={<AdminBasePage />} path="/admin-add-pond/:id" />
             <Route element={<ClusterView />} path="/admin-cluster-view" />
+            <Route element={<PondList />} path="/admin-pond-list/:id" />
             <Route element={<Canvas />} path="/canvas-draw" />
             <Route element={<PondDetails />} path="/pond-details/:id" />
             <Route element={<UserPageOne />} path="/user-dashboard/:clusterid" />

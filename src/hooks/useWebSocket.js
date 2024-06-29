@@ -4,6 +4,7 @@ const useWebSocket = (url) => {
   const [data, setData] = useState(() => {
     // Initialize data from local storage if available
     const storedData = localStorage.getItem('data');
+    console.log(storedData);
     return storedData ? JSON.parse(storedData) : [];
   });
   const socketRef = useRef(null);

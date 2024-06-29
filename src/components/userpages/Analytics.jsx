@@ -12,6 +12,7 @@ import L from "leaflet";
 import { ResponsNav } from "../ResponsNav";
 import smileFish from "../../assets/img/smile_fish.jpg";
 import machineImg from "../../assets/img/device.png"; // Import the machine image
+import Select from 'react-select';
 
 export const Analytics = () => {
   const mapRef = useRef(null);
@@ -22,7 +23,17 @@ export const Analytics = () => {
   const [pondsData, setPondsData] = useState([]);
   const { t } = useTranslation();
   const [socketData, setSocketData] = useState([]);
+  const [isSelectVisible, setIsSelectVisible] = useState(false); // Add state for select visibility
   const BASEURL = URL();
+  const [clusters, setClusters] = useState([]);
+  const [clusterName,setClusterName] = useState('');
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  // Create the options array for Select component
+  const options = clusters.map((user) => ({
+    value: user.id,
+    label: user.Name
+  }));
 
   useEffect(() => {
     if (mapRef.current) return; // Ensure map is not re-initialized
@@ -55,9 +66,16 @@ export const Analytics = () => {
 
   const fetchPonds = async (userId) => {
     try {
-      const response = await axios.get(`${BASEURL}/pondanalytic/${userId}/`);
+      if(selectedOption){
+      const response = await axios.get(`${BASEURL}/clusterpond_analytic/${selectedOption.value}/`);
       setPondsData(response.data);
       // console.log(response.data);
+      }else{
+
+        const response = await axios.get(`${BASEURL}/pondanalytic/${userId}/`);
+        setPondsData(response.data);
+        // console.log(response.data);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -69,7 +87,7 @@ export const Analytics = () => {
       const auth = JSON.parse(authString);
       fetchPonds(auth.Mob);
     }
-  }, []);
+  }, [selectedOption]);
 
   useEffect(() => {
     if (map && pondsData.length > 0) {
@@ -185,11 +203,35 @@ export const Analytics = () => {
     }
   };
 
+  const handleFilterClick = () => {
+    setIsSelectVisible((prevState) => !prevState);
+  };
+
   useEffect(() => {
     // console.log(socketData);
   }, [socketData]);
 
   // console.log(pondsData);
+  const handleChange = (option) => {
+    setSelectedOption(option);
+    // fetchPonds()
+  };
+  // Fetch cluster and user data
+  const fetchClusters = async () => {
+    try {
+      const authString = localStorage.getItem('auth');
+      const auth = JSON.parse(authString);
+      const id = auth.Mob;
+      const response = await axios.get(`${BASEURL}/fetch_cluster/${id}/`);
+      // console.log(response);
+      setClusters(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    fetchClusters();
+  }, []);
 
   return (
     <Layout>
@@ -200,8 +242,12 @@ export const Analytics = () => {
           <div className="w-full flex flex-col md:flex-row gap-2 m-2">
             <div className="md:w-8/12 flex flex-col relative h-[97vh]">
               <div id="map" className="w-full h-80 md:h-[100vh] z-0"></div>
+              <span className={`absolute flex items-center gap-2 align-middle bg-white text-lg p-1 top-2 md:right-28 rounded-sm border cursor-pointer hover:bg-gray-100 ${isSelectVisible ? "w-1/2 p-[1px]" : ""}`}>
+                <Select placeholder="Select cluster..." value={selectedOption} onChange={handleChange} options={options} className={`absolute text-sm outline-none border-none transition-all delay-150 ease-in-out ${isSelectVisible ? "block w-full" : "hidden"}`}/>
+                <i className="fa-solid fa-filter text-xl" onClick={handleFilterClick}></i>
+              </span>
               <button
-                className="absolute bg-white p-2 text-black rounded-sm border border-black z-1 right-0 md:right-2 top-2"
+                className="absolute bg-white p-[7px] text-black rounded-sm border border-black z-1 right-0 md:right-2 top-2"
                 onClick={toggleSatelliteView}
               >
                 Map Views

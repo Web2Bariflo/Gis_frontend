@@ -46,6 +46,7 @@ const AdminPageOne = () => {
         const auth = JSON.parse(authString);
         try {
             const res = await axios.get(`${BASEURL}/viewuser/ `);
+            console.log(res.data);
             setUserList(res.data);
             setUserCount(res.data.length);
             const totalPondCount = res.data.reduce((acc, user) => acc + user.pond_count, 0);
@@ -213,7 +214,7 @@ const AdminPageOne = () => {
                                                 {user.pond_count ? <span className="bg-red-600 text-red-100 px-2 py-1 ml-2 rounded text-xs font-bold ">{user.pond_count}</span> : null}
                                             </th>
                                             <td className="px-6 py-4">
-                                                {user.Mob}
+                                                {user.mob}
                                             </td>
                                             <td className="px-6 py-4">
                                                 {user.email}

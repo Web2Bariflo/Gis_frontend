@@ -22,8 +22,9 @@ const Livefeed = ({setSocketData}) => {
     }, [])
     // console.log(user);
     const { data, isConnected } = useWebSocket(`ws://192.168.0.108:8002/ws/${user}/`);
-    console.log(data);
-    setSocketData(data)
+    // console.log(data);
+    // setSocketData(data)
+    setSocketData(data[data.length - 1]);
     useEffect(() => {
         if (latestMessageRef.current) {
           latestMessageRef.current.scrollIntoView({ behavior: 'smooth' });

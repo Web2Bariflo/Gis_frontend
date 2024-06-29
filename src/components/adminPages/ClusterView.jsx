@@ -6,9 +6,11 @@ import axios from 'axios';
 import URL from '../../URL';
 import { AddCluster } from './AddCluster';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 export const ClusterView = () => {
   const api = URL();
+  const navigate= useNavigate();
   const [selectedOption, setSelectedOption] = useState(null);
   const [openModel, setOpenModel] = useState(false);
   const [clusters, setClusters] = useState([]);
@@ -29,7 +31,7 @@ export const ClusterView = () => {
       const auth = JSON.parse(authString);
       const id = auth.Mob;
       const response = await axios.get(`${api}/admin_cluster_view/`);
-      // console.log(response);
+      console.log(response);
       setClusters(response.data);
       setFilteredClusters(response.data); // Initialize filtered clusters with all clusters
     } catch (error) {
@@ -106,7 +108,7 @@ export const ClusterView = () => {
         <div className='w-full mt-8 flex gap-3 flex-wrap'>
           {filteredClusters.map((user, i) => (
             user.clusters.map((cluster, j) => (
-              <div className='p-2 bg-white max-h-max shadow-lg max-w-max rounded-md cursor-pointer' key={j}>
+              <div className='p-2 bg-white max-h-max shadow-lg max-w-max rounded-md cursor-pointer' key={j} onClick={()=>navigate(`/admin-pond-list/${cluster.cluster_id}`)}>
                 <img src={Mapimg} alt="..." className='w-[200px]' />
                 <div className='flex w-full justify-between px-2'>
                   <p className='text-lg text-orange-900 font-semibold mt-4'>{cluster.cluster_name}</p>

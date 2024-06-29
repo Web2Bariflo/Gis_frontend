@@ -122,7 +122,7 @@ const AdminBasePage = () => {
             // const latlong = [latitude, longitude]
             if(latitude && longitude){
 
-                const res = await axios.post(`${BASEURL}/demo/`, { name: name, location: coardinates, usermob:id,city:cityName,area:totalArea,latitude:latitude,longitude:longitude });
+                const res = await axios.post(`${BASEURL}/demo/`, { name: name, location: coardinates, clusterid:id,city:cityName,area:totalArea,latitude:latitude,longitude:longitude });
                 if (res.data && res.data.message) {
                     toast.success(res.data.message);
                     setName('');
@@ -132,7 +132,7 @@ const AdminBasePage = () => {
                     setLatitude('');
                     setLongitude('');
                     setTimeout(() => {
-                        navigate('/admin-dashboard');
+                        // navigate('/admin-dashboard');
                     }, 5000); // Navigate after 5 seconds
                 }
                 else{
@@ -288,9 +288,14 @@ const AdminBasePage = () => {
                     <div id="map" className='md:h-[90%] w-full z-0 h-80'></div>
                     <button className='absolute bg-white p-2 text-black rounded-sm border border-black' style={{top:'20px',right:'20px', zIndex:1}} onClick={toggleSatelliteView}>Map Views</button>
                    <div className='flex justify-between'>
-                   <button className="md:w-64 text-white p-3 rounded-full px-5 my-2 md:text-xl font-bold" style={{ background: 'linear-gradient(to right, rgb(0, 101, 236), #94c1ff)' }} onClick={handleSubmit}>
+                <div className='flex gap-3 flex-col md:flex-row'>
+                <button className="md:w-64 text-white p-3 rounded-full px-5 my-2 md:text-xl font-bold" style={{ background: 'linear-gradient(to right, rgb(0, 101, 236), #94c1ff)' }} onClick={handleSubmit}>
                         Submit
                     </button>
+                    <button className="md:w-64 text-white p-3 rounded-full px-5 my-2 md:text-xl font-bold" style={{ background: 'linear-gradient(to right, rgb(0, 101, 236), #94c1ff)' }} onClick={()=>navigate('/admin-dashboard')}>
+                        Back
+                    </button>
+                </div>
                     <div className='my-2 md:text-xl font-bold p-3'>Total Area: {totalArea.toFixed(2)} acres</div>
                    </div>
                 </div>
