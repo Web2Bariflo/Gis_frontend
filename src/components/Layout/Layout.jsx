@@ -13,7 +13,7 @@ const Layout = ({children, title, dscription,keywords, author}) => {
         <meta name="keywords" content={keywords} />
         <meta name="author" content={author} />
     </Helmet>
-    <main><Toaster /> <ToastContainer />{children}</main>
+    <main>{children}</main>
     </>
   )
 }

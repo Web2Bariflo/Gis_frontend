@@ -17,10 +17,13 @@ import Taskassign from './components/userpages/Taskassign';
 import { Canvas } from './components/adminPages/Canvas';
 import { Cluster } from './components/userpages/Cluster';
 import { ClusterView } from './components/adminPages/ClusterView';
+import { ToastContainer } from 'react-toastify';
+import { TaskAssignClusters } from './components/userpages/TaskAssignClusters';
 
 function App() {
   return (
       <Router>
+        <ToastContainer />
         <Routes>
           <Route element={<PrivateRoute />}>
             <Route element={<AdminPageOne />} path='/admin-dashboard' />
@@ -32,7 +35,8 @@ function App() {
             <Route element={<Cluster />} path="/user-cluster-list" />
             <Route element={<UserDashboard />} path="/user-pond-details/:id" />
             <Route element={<Analytics />} path="/analytics" />
-            <Route element={<Taskassign />} path="/task-asign" />
+            <Route element={<Taskassign />} path="/task-asign/:userId" />
+            <Route element={<TaskAssignClusters />} path="/task-asign-clusters" />
             <Route element={<ChangePassword />} path="/change-password/:id" />
           </Route>
           <Route element={<ForgetPassword />}  path="/forget-password" />

@@ -73,7 +73,7 @@ export const Sidebar = ({handleSettingOpen  }) => {
 
                 <span className="mx-4 font-medium">Analytics</span>
             </div>
-            <div className={`flex items-center px-4 py-2 mt-5 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700 cursor-pointer ${location.pathname === '/task-asign' ? ' bg-gray-200  dark:text-gray-200 text-gray-700' : 'text-gray-500'}`} onClick={()=>navigate('/task-asign')}>
+            <div className={`flex items-center px-4 py-2 mt-5 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700 cursor-pointer ${location.pathname === '/task-asign' ? ' bg-gray-200  dark:text-gray-200 text-gray-700' : 'text-gray-500'}`} onClick={()=>navigate('/task-asign-clusters')}>
             <i className="fa-solid fa-list-check w-5 h-5"></i>
 
                 <span className="mx-4 font-medium">Task Assign</span>

@@ -21,7 +21,7 @@ const Livefeed = ({setSocketData}) => {
         setUserId(auth.Mob)
     }, [])
     // console.log(user);
-    const { data, isConnected } = useWebSocket(`ws://192.168.0.108:8000/ws/${user}/`);
+    const { data, isConnected } = useWebSocket(`ws://192.168.0.108:8002/ws/${user}/`);
     console.log(data);
     setSocketData(data)
     useEffect(() => {
