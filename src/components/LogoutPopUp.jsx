@@ -6,6 +6,7 @@ export const LogoutPopUp = ({setIsOpen}) => {
 
   const onLogout = () => {
     localStorage.removeItem('auth');
+    localStorage.removeItem('data');
     setIsOpen(false);
     navigate('/');
   };

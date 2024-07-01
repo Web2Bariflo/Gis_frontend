@@ -576,9 +576,10 @@ const UserDashboard = () => {
                   {/* <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-white" style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }}> */}
                   <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>AQUATIC MACROPHYTES</h2>
-                    {
+                    {/* {
                       AQUATIC_MACROPYTES ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('AQUATIC_MACROPYTES')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' onClick={() => { paymentGateway(100000, 'AQUATIC_MACROPYTES') }}>PAY</button>
-                    }
+                    } */}
+                    <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('AQUATIC_MACROPYTES')}>+</span>
                   </div>
                   {
                     openModel.AQUATIC_MACROPYTES ? <div className='p-3 shadow-lg shadow-green-500/50 bg-green-100'>
@@ -597,9 +598,10 @@ const UserDashboard = () => {
                 <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
                   <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>CDOM</h2>
-                    {
+                    {/* {
                       CDOM ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('CDOM')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' onClick={() => { paymentGateway(200000, 'CDOM') }}>PAY</button>
-                    }
+                    } */}
+                    <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('CDOM')}>+</span> 
                   </div>
                   {
                     openModel.CDOM ? <div className='p-3 bg-green-100 shadow-lg shadow-green-500/50'>
@@ -619,9 +621,10 @@ const UserDashboard = () => {
                 <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
                   <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>GCI</h2>
-                    {
+                    {/* {
                       GCI ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('GCI')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' onClick={() => { paymentGateway(300000, 'GCI') }}>PAY</button>
-                    }
+                    } */}
+                    <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('GCI')}>+</span>
                   </div>
                   {
                     openModel.GCI ? <div className='p-3 bg-green-100 shadow-lg shadow-green-500/50'>
@@ -640,9 +643,10 @@ const UserDashboard = () => {
                 <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
                   <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>NDCI</h2>
-                    {
+                    {/* {
                       NDCI ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('NDCI')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' onClick={() => { paymentGateway(400000, 'NDCI') }}>PAY</button>
-                    }
+                    } */}
+                    <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('NDCI')}>+</span>
                   </div>
                   {
                     openModel.NDCI ? <div className='p-3 bg-green-100 shadow-lg shadow-green-500/50'>
@@ -661,9 +665,10 @@ const UserDashboard = () => {
                 <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
                   <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>NDTI</h2>
-                    {
+                    {/* {
                       NDTI ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('NDTI')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' onClick={() => { paymentGateway(500000, 'NDTI') }}>PAY</button>
-                    }
+                    } */}
+                    <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('NDTI')}>+</span> 
                   </div>
                   {
                     openModel.NDTI ? <div className='p-3 bg-green-100 shadow-lg shadow-green-500/50'>
@@ -684,9 +689,10 @@ const UserDashboard = () => {
                 <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
                   <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>NDVI</h2>
-                    {
+                    {/* {
                       NDVI ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('NDVI')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' onClick={() => { paymentGateway(600000, 'NDVI') }}>PAY</button>
-                    }
+                    } */}
+                    <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('NDVI')}>+</span>
                   </div>
                   {
                     openModel.NDVI ? <div className='p-3 bg-green-100 shadow-lg shadow-green-500/50'>
@@ -705,9 +711,10 @@ const UserDashboard = () => {
                 <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
                   <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>TSS</h2>
-                    {
+                    {/* {
                       TSS ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('TSS')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' onClick={() => { paymentGateway(700000, 'TSS') }}>PAY</button>
-                    }
+                    } */}
+                    <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('TSS')}>+</span>
                   </div>
                   {
                     openModel.TSS ? <div className='p-3 bg-green-100 shadow-lg shadow-green-500/50'>
@@ -726,9 +733,10 @@ const UserDashboard = () => {
                 <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
                   <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>DO</h2>
-                    {
+                    {/* {
                       dissolved_oxygen ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('dissolved_oxygen')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' onClick={() => { paymentGateway(800000, 'dissolved_oxygen') }}>PAY</button>
-                    }
+                    } */}
+                    <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('dissolved_oxygen')}>+</span>
                   </div>
                   {
                     openModel.dissolved_oxygen ? <div className='p-3 bg-green-100 shadow-lg shadow-green-500/50'>
@@ -747,9 +755,10 @@ const UserDashboard = () => {
                 <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
                   <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>NDWI</h2>
-                    {
+                    {/* {
                       ndwi_values ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('ndwi_values')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' onClick={() => { paymentGateway(900000, 'NDWI') }}>PAY</button>
-                    }
+                    } */}
+                    <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('ndwi_values')}>+</span>
                   </div>
                   {
                     openModel.ndwi_values ? <div className='p-3 bg-green-100 shadow-lg shadow-green-500/50'>
@@ -768,9 +777,10 @@ const UserDashboard = () => {
                 <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
                   <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>PH</h2>
-                    {
+                    {/* {
                       ph_values ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('ph_values')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' onClick={() => { paymentGateway(1000000, 'ph') }}>PAY</button>
-                    }
+                    } */}
+                    <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('ph_values')}>+</span>
                   </div>
                   {
                     openModel.ph_values ? <div className='p-3 bg-green-100 shadow-lg shadow-green-500/50'>

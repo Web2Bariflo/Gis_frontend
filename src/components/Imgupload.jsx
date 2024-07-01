@@ -45,6 +45,7 @@ const Imgupload = ({id}) => {
     useEffect(()=>{
         fetchPhotoData();
     },[handleInputChange]);
+    console.log(avatar);
     return (
         <>
             <div className="relative w-24 mx-auto ml-[47px]">
