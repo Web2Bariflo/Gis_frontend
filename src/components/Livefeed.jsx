@@ -9,7 +9,7 @@ const Livefeed = ({setSocketData}) => {
     const authString = localStorage.getItem('auth')
     // Parse the JSON string into an object
     const auth = JSON.parse(authString);
-    const user = auth.Mob
+    const user = auth?.Mob
     const latestMessageRef = useRef(null);
     useEffect(() => {
         const authString = localStorage.getItem('auth')
@@ -20,7 +20,6 @@ const Livefeed = ({setSocketData}) => {
         const user = auth.Mob
         setUserId(auth.Mob)
     }, [])
-    console.log(wsc);
     const { data, isConnected } = useWebSocket(`ws://20.244.110.108:8000/ws/${user}/`);
     // console.log(data);
     // setSocketData(data)
