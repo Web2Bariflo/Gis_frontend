@@ -535,7 +535,7 @@ const PondDetails = ({onClose,pondId}) => {
                 </div>
                 <div className="flex flex-col w-full justify-between bg-gray-400 rounded-md">
                   <div className="flex w-full justify-between bg-gray-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
-                    <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>CDOM</h2>
+                    <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>Colored Dissolved Organic Matter</h2>
                     {/* {
                       CDOM ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('CDOM')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer' >PAY</button>
                     } */}
@@ -558,7 +558,7 @@ const PondDetails = ({onClose,pondId}) => {
                 </div>
                 <div className="flex flex-col w-full justify-between bg-gray-400 rounded-md">
                   <div className="flex w-full justify-between bg-gray-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
-                    <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>GCI</h2>
+                    <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>Green Chlorophyll Index</h2>
                     {/* {
                       GCI ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('GCI')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer'>PAY</button>
                     } */}
@@ -580,7 +580,7 @@ const PondDetails = ({onClose,pondId}) => {
                 </div>
                 <div className="flex flex-col w-full justify-between bg-gray-400 rounded-md">
                   <div className="flex w-full justify-between bg-gray-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
-                    <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>NDCI</h2>
+                    <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>Normalized Difference Chlorophyll Index</h2>
                     {/* {
                       NDCI ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('NDCI')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer'>PAY</button>
                     } */}
@@ -602,7 +602,7 @@ const PondDetails = ({onClose,pondId}) => {
                 </div>
                 <div className="flex flex-col w-full justify-between bg-gray-400 rounded-md">
                   <div className="flex w-full justify-between bg-gray-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
-                    <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>NDTI</h2>
+                    <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>Normalized Difference Vegetation Index</h2>
                     {/* {
                       NDTI ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('NDTI')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer' >PAY</button>
                     } */}
@@ -626,7 +626,7 @@ const PondDetails = ({onClose,pondId}) => {
               <div className="flex flex-col w-full md:w-6/12 gap-4">
                 <div className="flex flex-col w-full justify-between bg-gray-400 rounded-md">
                   <div className="flex w-full justify-between bg-gray-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
-                    <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>NDVI</h2>
+                    <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>Normalized difference vegetation index</h2>
                     {/* {
                       NDVI ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('NDVI')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer'>PAY</button>
                     } */}
@@ -648,7 +648,7 @@ const PondDetails = ({onClose,pondId}) => {
                 </div>
                 <div className="flex flex-col w-full justify-between bg-gray-400 rounded-md">
                   <div className="flex w-full justify-between bg-gray-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
-                    <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>TSS</h2>
+                    <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>Total suspended solids </h2>
                     {/* {
                       TSS ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('TSS')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer' >PAY</button>
                     } */}
@@ -670,7 +670,7 @@ const PondDetails = ({onClose,pondId}) => {
                 </div>
                 <div className="flex flex-col w-full justify-between bg-gray-400 rounded-md">
                   <div className="flex w-full justify-between bg-gray-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
-                    <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>DO</h2>
+                    <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>Dissolved Oxygen</h2>
                     {/* {
                       dissolved_oxygen ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('dissolved_oxygen')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer' >PAY</button>
                     } */}
@@ -692,7 +692,7 @@ const PondDetails = ({onClose,pondId}) => {
                 </div>
                 <div className="flex flex-col w-full justify-between bg-gray-400 rounded-md">
                   <div className="flex w-full justify-between bg-gray-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
-                    <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>NDWI</h2>
+                    <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>Normalized Difference Water Index</h2>
                     {/* {
                       ndwi_values ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('ndwi_values')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' >PAY</button>
                     } */}
@@ -714,7 +714,7 @@ const PondDetails = ({onClose,pondId}) => {
                 </div>
                 <div className="flex flex-col w-full justify-between bg-gray-400 rounded-md">
                   <div className="flex w-full justify-between bg-gray-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
-                    <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>PH</h2>
+                    <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>Potential of Hydrogen</h2>
                     {/* {
                       ph_values ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('ph_values')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' >PAY</button>
                     } */}
