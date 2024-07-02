@@ -582,7 +582,7 @@ const UserDashboard = () => {
                     <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('AQUATIC_MACROPYTES')}>+</span>
                   </div>
                   {
-                    openModel.AQUATIC_MACROPYTES ? <div className='p-3 shadow-lg shadow-green-500/50 bg-green-100'>
+                    openModel.AQUATIC_MACROPYTES ? <div className='p-3 shadow-lg shadow-gray-500/50 bg-gray-100'>
                       <h3 className='text-green-500 text-xl'>Chart</h3>
                       <hr className='w-full'/>
                         <ChartComponent title="AQUATIC MACROPHYTES Chart" data={data.AQUATIC_MACROPYTES} labels={data.date}/>

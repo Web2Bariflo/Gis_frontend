@@ -19,6 +19,7 @@ export default function PondList() {
   const { id } = useParams();
   const [searchQuery, setSearchQuery] = useState('');
 
+
   // Fetch cluster and user data
   const fetchPonds = async () => {
     try {
@@ -62,6 +63,7 @@ export default function PondList() {
 //       document.removeEventListener('mousedown', handleClickOutside);
 //     };
 //   }, [openModel]);
+console.log(filteredPonds);
 
   return (
     <div className='flex gap-12'>
@@ -80,7 +82,7 @@ export default function PondList() {
         {/* Cluster view */}
         <div className='w-full mt-8 flex gap-3 flex-wrap'>
           {filteredPonds.map((pond, j) => (
-            <div className='p-2 bg-white max-h-max shadow-lg max-w-max rounded-md cursor-pointer' key={j}>
+            <div className='p-2 bg-white max-h-max shadow-lg max-w-max rounded-md cursor-pointer' key={j} onClick={()=>navigate(`/pond-details/${pond.id}`)}>
               <img src={Mapimg} alt="..." className='w-[200px]' />
               <div className='flex w-full justify-between px-2 '>
                 <p className='text-lg text-orange-900 font-semibold mt-4'>{pond.name}</p>

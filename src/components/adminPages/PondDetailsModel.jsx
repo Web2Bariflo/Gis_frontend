@@ -80,7 +80,7 @@ const PondDetailsModel = ({ onClose, setOpenModel, user }) => {
                         <p className="text-gray-500 dark:text-gray-400 mb-4">Select your desired pond:</p>
                         <div className="space-y-4 mb-4 flex flex-wrap gap-1 justify-around">
                             {
-                                userPonds && userPonds.map((pond, index) => {
+                                userPonds ? userPonds?.map((pond, index) => {
                                     return (
 
                                         <div key={index} className='w-96 mt-4'>
@@ -116,7 +116,7 @@ const PondDetailsModel = ({ onClose, setOpenModel, user }) => {
                                         </div>
 
                                     )
-                                })
+                                }): <p>No Ponds</p>
                             }
 
                         </div>

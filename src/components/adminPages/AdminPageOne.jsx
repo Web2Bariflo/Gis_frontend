@@ -334,9 +334,9 @@ const AdminPageOne = () => {
 
             </div>
             {/* view ponds Models */}
-            {
+            {/* {
                 openUserPondsModel ? <PondDetailsModel onClose={viewUserPonds} setOpenModel={setOpenUserPondsModel} user={userPonds}/> : null
-            }
+            } */}
             {
                 isOpen && <LogoutPopUp setIsOpen={setIsOpen}/>
             }

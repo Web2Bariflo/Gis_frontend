@@ -116,7 +116,7 @@ const PondDetails = ({onClose,pondId}) => {
   
   
         try {
-          const res = await axios.get(`${BASEURL}/userpondsid/${pondId}/`)
+          const res = await axios.get(`${BASEURL}/userpondsid/${id}/`)
           console.log(res);
           setPondCity(res.data.city)
           const coordinates = res.data.location
@@ -389,7 +389,7 @@ const PondDetails = ({onClose,pondId}) => {
    const getChart = async() => {
     try {
         console.log(pondId);
-      const res = await axios.get(`${BASEURL}/graph/${pondId}/`);
+      const res = await axios.get(`${BASEURL}/graph/${id}/`);
       console.log(res);
       setData(res.data);
      
@@ -421,8 +421,7 @@ const PondDetails = ({onClose,pondId}) => {
               </div>
             </div>
             <div className='p-4 md:w-5/12 flex flex-col md:space-y-3 space-y-2 my-0 mb-4 md:my-0'  style={{
-          background: "linear-gradient(to right, rgb(0, 101, 236), #94c1ff)",
-                                                            }}>
+          background: "linear-gradient(to right, rgb(0, 101, 236), #94c1ff)",}}>
               <div className='text-xl font-bold'>{t('weather')}</div>
               {
                 forCastData && forCastData.length > 0 ? (
@@ -512,16 +511,17 @@ const PondDetails = ({onClose,pondId}) => {
             <div className='p-4 w-full flex gap-4 justify-around flex-col md:flex-row' style={{ backgroundColor: 'rgb(238, 255, 239)' }}>
 
               <div className="flex flex-col w-full md:w-6/12 gap-4">
-                <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
-                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-white" style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }}>
+                <div className="flex flex-col w-full justify-between bg-gray-400 rounded-md">
+                  <div className="flex w-full justify-between bg-gray-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>AQUATIC MACROPHYTES</h2>
-                    {
+                    {/* {
                       AQUATIC_MACROPYTES ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('AQUATIC_MACROPYTES')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer'>PAY</button>
-                    }
+                    } */}
+                    <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('AQUATIC_MACROPYTES')}>+</span>
                   </div>
                   {
-                    openModel.AQUATIC_MACROPYTES ? <div className='p-3 shadow-lg shadow-green-500/50 bg-green-100'>
-                      <h3 className='text-green-500 text-xl'>Chart</h3>
+                    openModel.AQUATIC_MACROPYTES ? <div className='p-3 shadow-lg shadow-gray-500/50 bg-gray-100'>
+                      <h3 className='text-gray-500 text-xl'>Chart</h3>
                       <hr className='w-full'/>
                         <ChartComponent title="AQUATIC MACROPHYTES Chart" data={data.AQUATIC_MACROPYTES} labels={data.date}/>
                       <div className="group relative flex">
@@ -533,16 +533,17 @@ const PondDetails = ({onClose,pondId}) => {
                     </div> : ""
                   }
                 </div>
-                <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
-                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-white" style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }}>
+                <div className="flex flex-col w-full justify-between bg-gray-400 rounded-md">
+                  <div className="flex w-full justify-between bg-gray-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>CDOM</h2>
-                    {
+                    {/* {
                       CDOM ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('CDOM')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer' >PAY</button>
-                    }
+                    } */}
+                    <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('CDOM')}>+</span> 
                   </div>
                   {
-                    openModel.CDOM ? <div className='p-3 bg-green-100 shadow-lg shadow-green-500/50'>
-                      <h3 className='text-green-500 text-xl'>Chart</h3>
+                    openModel.CDOM ? <div className='p-3 bg-gray-100 shadow-lg shadow-gray-500/50'>
+                      <h3 className='text-gray-500 text-xl'>Chart</h3>
                       <hr className='w-full'/>
                       <ChartComponent title="CDOM Chart" data={data.CDOM} labels={data.date}/>
                       
@@ -555,16 +556,17 @@ const PondDetails = ({onClose,pondId}) => {
                     </div> : ""
                   }
                 </div>
-                <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
-                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-white" style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }}>
+                <div className="flex flex-col w-full justify-between bg-gray-400 rounded-md">
+                  <div className="flex w-full justify-between bg-gray-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>GCI</h2>
-                    {
+                    {/* {
                       GCI ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('GCI')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer'>PAY</button>
-                    }
+                    } */}
+                    <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('GCI')}>+</span>
                   </div>
                   {
-                    openModel.GCI ? <div className='p-3 bg-green-100 shadow-lg shadow-green-500/50'>
-                      <h3 className='text-green-500 text-xl'>Chart</h3>
+                    openModel.GCI ? <div className='p-3 bg-gray-100 shadow-lg shadow-gray-500/50'>
+                      <h3 className='text-gray-500 text-xl'>Chart</h3>
                       <hr className='w-full'/>
                       <ChartComponent title="GCI Chart" data={data.GCI} labels={data.date}/>
                       <div className="group relative flex">
@@ -576,16 +578,17 @@ const PondDetails = ({onClose,pondId}) => {
                     </div> : ""
                   }
                 </div>
-                <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
-                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-white" style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }}>
+                <div className="flex flex-col w-full justify-between bg-gray-400 rounded-md">
+                  <div className="flex w-full justify-between bg-gray-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>NDCI</h2>
-                    {
+                    {/* {
                       NDCI ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('NDCI')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer'>PAY</button>
-                    }
+                    } */}
+                    <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('NDCI')}>+</span>
                   </div>
                   {
-                    openModel.NDCI ? <div className='p-3 bg-green-100 shadow-lg shadow-green-500/50'>
-                      <h3 className='text-green-500 text-xl'>Chart</h3>
+                    openModel.NDCI ? <div className='p-3 bg-gray-100 shadow-lg shadow-gray-500/50'>
+                      <h3 className='text-gray-500 text-xl'>Chart</h3>
                       <hr className='w-full'/>
                       <ChartComponent title="NDCI Chart" data={data.NDCI} labels={data.date}/>
                       <div className="group relative flex">
@@ -597,16 +600,17 @@ const PondDetails = ({onClose,pondId}) => {
                     </div> : ""
                   }
                 </div>
-                <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
-                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-white" style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }}>
+                <div className="flex flex-col w-full justify-between bg-gray-400 rounded-md">
+                  <div className="flex w-full justify-between bg-gray-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>NDTI</h2>
-                    {
+                    {/* {
                       NDTI ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('NDTI')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer' >PAY</button>
-                    }
+                    } */}
+                    <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('NDTI')}>+</span> 
                   </div>
                   {
-                    openModel.NDTI ? <div className='p-3 bg-green-100 shadow-lg shadow-green-500/50'>
-                      <h3 className='text-green-500 text-xl'>Chart</h3>
+                    openModel.NDTI ? <div className='p-3 bg-gray-100 shadow-lg shadow-gray-500/50'>
+                      <h3 className='text-gray-500 text-xl'>Chart</h3>
                       <hr className='w-full'/>
                       <ChartComponent title="NDTI Chart" data={data.NDTI} labels={data.date}/>
                       <div className="group relative flex">
@@ -620,16 +624,17 @@ const PondDetails = ({onClose,pondId}) => {
                 </div>
               </div>
               <div className="flex flex-col w-full md:w-6/12 gap-4">
-                <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
-                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-white" style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }}>
+                <div className="flex flex-col w-full justify-between bg-gray-400 rounded-md">
+                  <div className="flex w-full justify-between bg-gray-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>NDVI</h2>
-                    {
+                    {/* {
                       NDVI ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('NDVI')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer'>PAY</button>
-                    }
+                    } */}
+                    <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('NDVI')}>+</span>
                   </div>
                   {
-                    openModel.NDVI ? <div className='p-3 bg-green-100 shadow-lg shadow-green-500/50'>
-                      <h3 className='text-green-500 text-xl'>Chart</h3>
+                    openModel.NDVI ? <div className='p-3 bg-gray-100 shadow-lg shadow-gray-500/50'>
+                      <h3 className='text-gray-500 text-xl'>Chart</h3>
                       <hr className='w-full'/>
                       <ChartComponent title="NDVI Chart" data={data.NDVI} labels={data.date}/>
                       <div className="group relative flex">
@@ -641,16 +646,17 @@ const PondDetails = ({onClose,pondId}) => {
                     </div> : ""
                   }
                 </div>
-                <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
-                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-white" style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }}>
+                <div className="flex flex-col w-full justify-between bg-gray-400 rounded-md">
+                  <div className="flex w-full justify-between bg-gray-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>TSS</h2>
-                    {
+                    {/* {
                       TSS ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('TSS')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer' >PAY</button>
-                    }
+                    } */}
+                    <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('TSS')}>+</span>
                   </div>
                   {
-                    openModel.TSS ? <div className='p-3 bg-green-100 shadow-lg shadow-green-500/50'>
-                      <h3 className='text-green-500 text-xl'>Chart</h3>
+                    openModel.TSS ? <div className='p-3 bg-gray-100 shadow-lg shadow-gray-500/50'>
+                      <h3 className='text-gray-500 text-xl'>Chart</h3>
                       <hr className='w-full'/>
                       <ChartComponent title="TSS Chart" data={data.TSS} labels={data.date} />
                       <div className="group relative flex">
@@ -662,16 +668,17 @@ const PondDetails = ({onClose,pondId}) => {
                     </div> : ""
                   }
                 </div>
-                <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
-                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-white" style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }}>
+                <div className="flex flex-col w-full justify-between bg-gray-400 rounded-md">
+                  <div className="flex w-full justify-between bg-gray-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>DO</h2>
-                    {
+                    {/* {
                       dissolved_oxygen ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('dissolved_oxygen')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer' >PAY</button>
-                    }
+                    } */}
+                    <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('dissolved_oxygen')}>+</span>
                   </div>
                   {
-                    openModel.dissolved_oxygen ? <div className='p-3 bg-green-100 shadow-lg shadow-green-500/50'>
-                      <h3 className='text-green-500 text-xl'>Chart</h3>
+                    openModel.dissolved_oxygen ? <div className='p-3 bg-gray-100 shadow-lg shadow-gray-500/50'>
+                      <h3 className='text-gray-500 text-xl'>Chart</h3>
                       <hr className='w-full'/>
                       <ChartComponent title="DO Chart" data={data.dissolved_oxygen} labels={data.date}/>
                       <div className="group relative flex">
@@ -683,44 +690,46 @@ const PondDetails = ({onClose,pondId}) => {
                     </div> : ""
                   }
                 </div>
-                <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
-                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-white" style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }}>
+                <div className="flex flex-col w-full justify-between bg-gray-400 rounded-md">
+                  <div className="flex w-full justify-between bg-gray-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>NDWI</h2>
-                    {
-                      ndwi_values ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('ndwi_values')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer' >PAY</button>
-                    }
+                    {/* {
+                      ndwi_values ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('ndwi_values')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' >PAY</button>
+                    } */}
+                    <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('ndwi_values')}>+</span>
                   </div>
                   {
-                    openModel.ndwi_values ? <div className='p-3 bg-green-100 shadow-lg shadow-green-500/50'>
-                      <h3 className='text-green-500 text-xl'>Chart</h3>
+                    openModel.ndwi_values ? <div className='p-3 bg-gray-100 shadow-lg shadow-gray-500/50'>
+                      <h3 className='text-gray-500 text-xl'>Chart</h3>
                       <hr className='w-full'/>
                       <ChartComponent title="NDWI Chart" data={data.NDWI} labels={data.date}/>
                       <div className="group relative flex">
                         <svg data-tooltip-target="tooltip-hover" data-tooltip-trigger="click" className="h-8 w-8 text-red-400 ml-[85%] relative cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={toggleTooltip}>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg><p className='text-red-400 flex justify-center cursor-pointer'>Disclaimer</p>
-                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">Normalized Difference Water Index (NDWI) can refer to one of two remote sensing-derived indexes related to liquid water: to monitor changes in water content of leaves, and to monitor changes related to water content in water bodies.</span>
+                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-gray-700 group-hover:scale-100">Normalized Difference Water Index (NDWI) can refer to one of two remote sensing-derived indexes related to liquid water: to monitor changes in water content of leaves, and to monitor changes related to water content in water bodies.</span>
                       </div>
                     </div> : ""
                   }
                 </div>
-                <div className="flex flex-col w-full justify-between bg-green-400 rounded-md">
-                  <div className="flex w-full justify-between bg-green-400 p-2 rounded-md shadow-md text-white" style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }}>
+                <div className="flex flex-col w-full justify-between bg-gray-400 rounded-md">
+                  <div className="flex w-full justify-between bg-gray-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
                     <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>PH</h2>
-                    {
-                      ph_values ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('ph_values')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer' >PAY</button>
-                    }
+                    {/* {
+                      ph_values ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('ph_values')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-gray-700 font-bold text-md curser-pointer' >PAY</button>
+                    } */}
+                    <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('ph_values')}>+</span>
                   </div>
                   {
-                    openModel.ph_values ? <div className='p-3 bg-green-100 shadow-lg shadow-green-500/50'>
-                      <h3 className='text-green-500 text-xl'>Chart</h3>
+                    openModel.ph_values ? <div className='p-3 bg-gray-100 shadow-lg shadow-gray-500/50'>
+                      <h3 className='text-gray-500 text-xl'>Chart</h3>
                       <hr className='w-full'/>
                       <ChartComponent title="PH Chart" data={data.ph} labels={data.date}/>
                       <div className="group relative flex">
                         <svg data-tooltip-target="tooltip-hover" data-tooltip-trigger="click" className="h-8 w-8 text-red-400 ml-[85%] relative cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={toggleTooltip}>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg><p className='text-red-400 flex justify-center cursor-pointer'>Disclaimer</p>
-                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">pH stands for "potential of hydrogen." It is a measure of the acidity or alkalinity of a solution, indicating the concentration of hydrogen ions (H+) present in the solution.</span>
+                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-gray-700 group-hover:scale-100">pH stands for "potential of hydrogen." It is a measure of the acidity or alkalinity of a solution, indicating the concentration of hydrogen ions (H+) present in the solution.</span>
                       </div>
                     </div> : ""
                   }

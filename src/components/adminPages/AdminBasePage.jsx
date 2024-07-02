@@ -211,15 +211,15 @@ const AdminBasePage = () => {
         <Layout title={"Admin Dashboard"}>
             <div className='flex flex-col md:flex-row'>
                 {/* side panel */}
-                <aside style={{ backgroundColor: 'rgba(65, 148, 94, 1)' }} className="flex flex-col md:w-[345px] md:h-screen px-4 py-8 overflow-y-auto border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
+                <aside style={{ backgroundColor: '#F6F8FC' }} className="flex flex-col md:w-[345px] md:h-screen px-4 py-8 overflow-y-auto border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700 text-gray-600">
                     <div className="flex flex-col flex-1 mt-6">
                         <div className="mb-5">
-                            <label htmlFor="base-input" className="block mb-2 text-sm font-medium text-white dark:text-white">Pond Name</label>
+                            <label htmlFor="base-input" className="block mb-2 text-sm font-medium dark:text-white">Pond Name</label>
                             <input type="text" id="base-input" name='name' className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={name}
                                 onChange={(e) => setName(e.target.value)} placeholder='Enter pond name' required/>
                         </div>
                         <div className="mb-5">
-                            <label htmlFor="city-input" className="block mb-2 text-sm font-medium text-white dark:text-white">City Name</label>
+                            <label htmlFor="city-input" className="block mb-2 text-sm font-medium dark:text-white">City Name</label>
                             <input type="text" id="city-input" name='city' className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={cityName}
                                 onChange={(e) => setCityName(e.target.value)} placeholder='Enter city name' required/>
                         </div>
@@ -228,7 +228,7 @@ const AdminBasePage = () => {
                         <div className="mb-5" >
                             <label
                                 htmlFor="locationname"
-                                className="block mb-2 text-sm font-medium text-white dark:text-white"
+                                className="block mb-2 text-sm font-medium dark:text-white"
                             >
                                 Search by Name
                             </label>
@@ -246,7 +246,7 @@ const AdminBasePage = () => {
                         <div className="mb-5" >
                             <label
                                 htmlFor="latitude"
-                                className="block mb-2 text-sm font-medium text-white dark:text-white"
+                                className="block mb-2 text-sm font-medium dark:text-white"
                             >
                                 Latitude
                             </label>
@@ -264,7 +264,7 @@ const AdminBasePage = () => {
                         <div className="mb-5">
                             <label
                                 htmlFor="longitude"
-                                className="block mb-2 text-sm font-medium text-white dark:text-white"
+                                className="block mb-2 text-sm font-medium dark:text-white"
                             >
                                 Langitude
                             </label>
