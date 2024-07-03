@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import AdminSideBar from './AdminSideBar';
-import Mapimg from './../../assets/img/mapimg.png';
+import Mapimg from './../../assets/img/pond.png';
 import axios from 'axios';
 import URL from '../../URL';
 import { AddCluster } from './AddCluster';
 import { toast } from 'react-toastify';
 import { useNavigate, useParams } from 'react-router-dom';
+import PondDetails from './PondDetails';
 
 export default function PondList() {
   const api = URL();
@@ -18,6 +19,7 @@ export default function PondList() {
   const modalRef = useRef(null);
   const { id } = useParams();
   const [searchQuery, setSearchQuery] = useState('');
+  const [pondId, setPondId] = useState(null);
 
 
   // Fetch cluster and user data
@@ -64,6 +66,10 @@ export default function PondList() {
 //     };
 //   }, [openModel]);
 console.log(filteredPonds);
+const openPondDetailsModel=(pondId)=>{
+  setOpenModel(true)
+  setPondId(pondId)
+}
 
   return (
     <div className='flex gap-12'>
@@ -82,7 +88,7 @@ console.log(filteredPonds);
         {/* Cluster view */}
         <div className='w-full mt-8 flex gap-3 flex-wrap'>
           {filteredPonds.map((pond, j) => (
-            <div className='p-2 bg-white max-h-max shadow-lg max-w-max rounded-md cursor-pointer' key={j} onClick={()=>navigate(`/pond-details/${pond.id}`)}>
+            <div className='p-2 bg-white max-h-max shadow-lg max-w-max rounded-md cursor-pointer' key={j} onClick={()=>openPondDetailsModel(pond.id)}>
               <img src={Mapimg} alt="..." className='w-[200px]' />
               <div className='flex w-full justify-between px-2 '>
                 <p className='text-lg text-orange-900 font-semibold mt-4'>{pond.name}</p>
@@ -95,6 +101,18 @@ console.log(filteredPonds);
           <i className="fa-solid fa-circle-plus text-6xl text-gray-600" onClick={() => navigate(`/admin-add-pond/${id}`)}></i>
         </span>
       </div>
+      {
+        openModel && (<div className="absolute top-0 max-w-max" style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}>
+          <div className="w-2/3 md:w-[80%] h-max top-5 md:p-10 pt-0 m-10 mx-auto rounded-md" style={{ backgroundColor: '#F6F8FC' }}>
+            <div className='flex justify-end px-4 mt-2 md:pt-0'>
+              <i className="fa-solid fa-xmark text-xl cursor-pointer" onClick={() => setOpenModel(false)}></i>
+            </div>
+            <PondDetails pondId={pondId}/>
+          </div>
+        </div>
+        
+        )
+      }
     </div>
   );
 }

@@ -54,10 +54,10 @@ const AdminBasePage = () => {
         const drawControl = new L.Control.Draw({
             draw: {
                 polygon: true,
-                polyline: false,
-                rectangle: false,
-                circle: false,
-                marker: false
+                polyline: true,
+                rectangle: true,
+                circle: true,
+                marker: true,
             },
             edit: {
                 featureGroup: drawnItems

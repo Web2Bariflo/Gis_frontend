@@ -58,11 +58,11 @@ const AdminPageOne = () => {
     };
 
     //  Delete User
-    const handleDelete = async () => {
+    const handleDelete = async (mob) => {
         setIsDeleted(false);
 
         try {
-            const res = await axios.delete(`${BASEURL}/deleteuser/${selectedUser}/`);
+            const res = await axios.delete(`${BASEURL}/deleteuser/${mob}/`);
             if (res.data && res.data.message) {
                 toast.success(res.data.message);
             }
@@ -141,7 +141,7 @@ const AdminPageOne = () => {
         setUserPonds(user)
         // console.log(user);
     }
-
+console.log(currentUsers);
     return (
         <Layout title={"Admin Dashboard"}>
             <div className='flex'>
@@ -207,7 +207,6 @@ const AdminPageOne = () => {
                                 {
 
                                     userList && userList.length > 0 ? (currentUsers?.map((user, index) => {
-
                                         return (<tr className="border-b dark:bg-gray-800 dark:border-gray-700" key={index}>
                                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                                 {user.name}
@@ -273,7 +272,7 @@ const AdminPageOne = () => {
                                                                             Cancel
                                                                         </button>
 
-                                                                        <button className="w-full px-4 py-2 mt-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md sm:w-auto sm:mt-0 hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" onClick={() => handleDelete(user.Mob)}>
+                                                                        <button className="w-full px-4 py-2 mt-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md sm:w-auto sm:mt-0 hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" onClick={() => handleDelete(user.mob)}>
                                                                             Delete
                                                                         </button>
                                                                     </div>

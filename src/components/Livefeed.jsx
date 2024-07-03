@@ -20,7 +20,7 @@ const Livefeed = ({setSocketData}) => {
         const user = auth.Mob
         setUserId(auth.Mob)
     }, [])
-    const { data, isConnected } = useWebSocket(`ws://20.244.110.108:8000/ws/${user}/`);
+    const { data, isConnected } = useWebSocket(`ws://waterbg.bc-pl.com/ws/${user}/`);
     // console.log(data);
     // setSocketData(data)
     setSocketData(data[data.length - 1]);

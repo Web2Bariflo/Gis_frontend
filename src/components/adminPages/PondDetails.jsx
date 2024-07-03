@@ -28,7 +28,7 @@ const PondDetails = ({onClose,pondId}) => {
     const [isSatelliteView, setIsSatelliteView] = useState(false);
     const [user, setUser] = useState();
     const [pondCity, setPondCity] = useState();
-    const { id } = useParams();
+    // const { id } = useParams();
     const [latitude, setLatitude] = useState('');
     const [longitude, setLongitude] = useState('');
     const [forCastData, setForCastData] = useState([]);
@@ -116,7 +116,7 @@ const PondDetails = ({onClose,pondId}) => {
   
   
         try {
-          const res = await axios.get(`${BASEURL}/userpondsid/${id}/`)
+          const res = await axios.get(`${BASEURL}/userpondsid/${pondId}/`)
           console.log(res);
           setPondCity(res.data.city)
           const coordinates = res.data.location
@@ -378,7 +378,7 @@ const PondDetails = ({onClose,pondId}) => {
   
     // Razorpay
   
-  
+  console.log(pondId);
     const toggleModel = async(model) => {
       setOpenModel(prevState => ({
         ...prevState,
@@ -389,7 +389,7 @@ const PondDetails = ({onClose,pondId}) => {
    const getChart = async() => {
     try {
         console.log(pondId);
-      const res = await axios.get(`${BASEURL}/graph/${id}/`);
+      const res = await axios.get(`${BASEURL}/graph/${pondId}/`);
       console.log(res);
       setData(res.data);
      

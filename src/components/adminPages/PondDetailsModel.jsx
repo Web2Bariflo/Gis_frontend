@@ -15,6 +15,7 @@ const PondDetailsModel = ({ onClose, setOpenModel, user }) => {
     const BASEURL = URL();
 
 
+
     useEffect(() => {
         const handleOutsideClick = (event) => {
             if (modalRef.current && !modalRef.current.contains(event.target)) {
