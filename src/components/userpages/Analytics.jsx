@@ -98,7 +98,7 @@ export const Analytics = () => {
 
       pondsData.forEach((pond) => {
         // Determine the color based on socketData match
-        const matchedSocket = socketData?.flat().find(socket => socket.POND_ID === pond.name && socket.STATUS === "Yes");
+        const matchedSocket = socketData?.find(socket=>socket.POND_ID === pond.name && socket.STATUS === "Yes");
         const color = matchedSocket ? "green" : "red";
 
         // Add pond location polygon

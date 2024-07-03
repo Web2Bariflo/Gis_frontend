@@ -2,10 +2,13 @@ import React, { useEffect, useState,useRef  } from 'react'
 import sunny from '../assets/img/weather_icon/sunny.png'
 import useWebSocket from '../hooks/useWebSocket';
 import URL from '../URL';
+import axios from 'axios';
 
 const Livefeed = ({setSocketData}) => {
     const [userId,setUserId] = useState()
-    const BASEURL = URL()
+    const BASEURL = URL();
+    const [data, setData] = useState([]);
+
     const authString = localStorage.getItem('auth')
     // Parse the JSON string into an object
     const auth = JSON.parse(authString);
@@ -20,10 +23,28 @@ const Livefeed = ({setSocketData}) => {
         const user = auth.Mob
         setUserId(auth.Mob)
     }, [])
-    const { data, isConnected } = useWebSocket(`ws://waterbg.bc-pl.com/ws/${user}/`);
+    // const { data, isConnected } = useWebSocket(`ws://waterbg.bc-pl.com/ws/${user}/`);
     // console.log(data);
     // setSocketData(data)
-    setSocketData(data[data.length - 1]);
+    const fetchData = async () => {
+      console.log('call');
+      try {
+        const response = await axios.get(`${BASEURL}/livefeed/${user}/`);
+        console.log(response.data);
+        if(response.data.length > 0) {
+          setData(prevData => [...prevData, ...response.data]);
+        setSocketData(response.data);
+        }
+      } catch (error) {
+        console.error('Error fetching live feed data:', error);
+      }
+    };
+    useEffect(() => {
+      fetchData();
+      const interval = setInterval(fetchData, 10000); // Fetch data every 10 seconds
+      return () => clearInterval(interval); // Cleanup interval on component unmount
+    }, []);
+    // setSocketData(data[data.length - 1]);
     useEffect(() => {
         if (latestMessageRef.current) {
           latestMessageRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -56,7 +77,7 @@ const Livefeed = ({setSocketData}) => {
                     </div>
                    <div className='h-[84vh] flex flex-col gap-2 overflow-auto'>
                    {
-                        data ? data.map(allData => allData.map((task, i) => {
+                        data && data.length > 0 ? data.map((task, i) => {
                             return (
                               <div
                                 className={`w-full p-4 pb-1 pt-0 rounded-lg shadow-lg ${
@@ -105,7 +126,7 @@ const Livefeed = ({setSocketData}) => {
                                 </div>
                               </div>
                             );
-                          })) : null
+                          }) : null
                     }
                    </div>
               </div>
