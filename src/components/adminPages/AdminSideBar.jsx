@@ -182,7 +182,7 @@ const AdminSideBar = () => {
 
                                 <span className="mx-4 font-medium">Settings</span>
                             </div>
-                            <div className="flex items-center px-4 py-2 mt-5 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700 cursor-pointer" onClick={()=>navigate('/canvas-draw')}>
+                            <div className="flex items-center px-4 py-2 mt-5 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700 cursor-pointer" onClick={()=>navigate('/cluster-for-picture')}>
                                 <i className="fa-solid fa-pencil"></i>
 
                                 <span className="mx-4 font-medium">Draw Picture</span>

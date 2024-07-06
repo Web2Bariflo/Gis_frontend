@@ -27,18 +27,26 @@ const Livefeed = ({setSocketData}) => {
     // console.log(data);
     // setSocketData(data)
     const fetchData = async () => {
-      console.log('call');
       try {
-        const response = await axios.get(`${BASEURL}/livefeed/${user}/`);
-        console.log(response.data);
-        if(response.data.length > 0) {
-          setData(prevData => [...prevData, ...response.data]);
-        setSocketData(response.data);
-        }
+          const response = await axios.get(`${BASEURL}/livefeed/${user}/`);
+          if (response.data.length > 0) {
+              setData(prevData => {
+                  const newData = response.data.filter(newTask => 
+                      !prevData.some(existingTask => existingTask.POLL_ID === newTask.POLL_ID)
+                  );
+                  if (newData.length > 0) {
+                      const updatedData = [...prevData, ...newData];
+                      setSocketData(updatedData);
+                      return updatedData;
+                  }
+                  return prevData;
+              });
+          }
       } catch (error) {
-        console.error('Error fetching live feed data:', error);
+          console.error('Error fetching live feed data:', error);
       }
-    };
+  };
+
     useEffect(() => {
       fetchData();
       const interval = setInterval(fetchData, 10000); // Fetch data every 10 seconds

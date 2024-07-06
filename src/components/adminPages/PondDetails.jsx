@@ -528,7 +528,7 @@ const PondDetails = ({onClose,pondId}) => {
                         <svg data-tooltip-target="tooltip-hover" data-tooltip-trigger="click" className="h-8 w-8 text-red-400 ml-[85%] relative cursor-pointer inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={toggleTooltip}>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg><p className='text-red-400 flex justify-center cursor-pointer inline'>Disclaimer</p>
-                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">Aquatic macrophytes are large, visible, and often rooted plants that grow in bodies of water such as lakes, rivers, ponds, and wetlands. They are a diverse group of plants that can include various species of submerged, floating, and emergent plants.</span>
+                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-500 p-2 text-xs text-white group-hover:scale-100">Aquatic macrophytes are large, visible, and often rooted plants that grow in bodies of water such as lakes, rivers, ponds, and wetlands. They are a diverse group of plants that can include various species of submerged, floating, and emergent plants.</span>
                       </div>
                     </div> : ""
                   }
@@ -551,7 +551,7 @@ const PondDetails = ({onClose,pondId}) => {
                         <svg data-tooltip-target="tooltip-hover" data-tooltip-trigger="click" className="h-8 w-8 text-red-400 ml-[85%] relative cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={toggleTooltip}>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg><p className='text-red-400 flex justify-center cursor-pointer'>Disclaimer</p>
-                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">CDOM stands for Chromophoric Dissolved Organic Matter. It refers to a group of organic compounds found in water that absorb light, particularly in the blue and ultraviolet regions of the electromagnetic spectrum.</span>
+                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-500 p-2 text-xs text-white group-hover:scale-100">CDOM stands for Chromophoric Dissolved Organic Matter. It refers to a group of organic compounds found in water that absorb light, particularly in the blue and ultraviolet regions of the electromagnetic spectrum.</span>
                       </div>
                     </div> : ""
                   }
@@ -573,7 +573,7 @@ const PondDetails = ({onClose,pondId}) => {
                         <svg data-tooltip-target="tooltip-hover" data-tooltip-trigger="click" className="h-8 w-8 text-red-400 ml-[85%] relative cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={toggleTooltip}>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg><p className='text-red-400 flex justify-center cursor-pointer'>Disclaimer</p>
-                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">The Green Chlorophyll Index (GCI) is a vegetation index used in remote sensing to assess the chlorophyll content of vegetation, particularly in agricultural applications.</span>
+                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-500 p-2 text-xs text-white group-hover:scale-100">The Green Chlorophyll Index (GCI) is a vegetation index used in remote sensing to assess the chlorophyll content of vegetation, particularly in agricultural applications.</span>
                       </div>
                     </div> : ""
                   }
@@ -595,14 +595,14 @@ const PondDetails = ({onClose,pondId}) => {
                         <svg data-tooltip-target="tooltip-hover" data-tooltip-trigger="click" className="h-8 w-8 text-red-400 ml-[85%] relative cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={toggleTooltip}>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg><p className='text-red-400 flex justify-center cursor-pointer'>Disclaimer</p>
-                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">NDCI stands for Normalized Difference Chlorophyll Index. It is a vegetation index used in remote sensing to estimate the concentration of chlorophyll in vegetation, particularly in aquatic and wetland environments.</span>
+                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-500 p-2 text-xs text-white group-hover:scale-100">NDCI stands for Normalized Difference Chlorophyll Index. It is a vegetation index used in remote sensing to estimate the concentration of chlorophyll in vegetation, particularly in aquatic and wetland environments.</span>
                       </div>
                     </div> : ""
                   }
                 </div>
                 <div className="flex flex-col w-full justify-between bg-gray-400 rounded-md">
                   <div className="flex w-full justify-between bg-gray-400 p-2 rounded-md shadow-md text-gray-700" style={{ backgroundColor: '#E9EEF6' }}>
-                    <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>Normalized Difference Vegetation Index</h2>
+                    <h2 className='h-full text-xl font-bold flex items-center text-center item-center'>Normalized Difference Turbidity Index</h2>
                     {/* {
                       NDTI ? <span className='text-2xl p-2 font-bold text-md cursor-pointer' onClick={() => toggleModel('NDTI')}>+</span> : <button className='p-3 bg-yellow-400 rounded-full px-8 text-white font-bold text-md curser-pointer' >PAY</button>
                     } */}
@@ -617,7 +617,7 @@ const PondDetails = ({onClose,pondId}) => {
                         <svg data-tooltip-target="tooltip-hover" data-tooltip-trigger="click" className="h-8 w-8 text-red-400 ml-[85%] relative cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={toggleTooltip}>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg><p className='text-red-400 flex justify-center cursor-pointer'>Disclaimer</p>
-                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">NDTI stands for Normalized Difference Turbidity Index. It is a spectral index used in remote sensing to estimate the turbidity or sediment concentration in water bodies, particularly in rivers, lakes, and coastal areas.</span>
+                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-500 p-2 text-xs text-white group-hover:scale-100">NDTI stands for Normalized Difference Turbidity Index. It is a spectral index used in remote sensing to estimate the turbidity or sediment concentration in water bodies, particularly in rivers, lakes, and coastal areas.</span>
                       </div>
                     </div> : ""
                   }
@@ -641,7 +641,7 @@ const PondDetails = ({onClose,pondId}) => {
                         <svg data-tooltip-target="tooltip-hover" data-tooltip-trigger="click" className="h-8 w-8 text-red-400 ml-[85%] relative cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={toggleTooltip}>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg><p className='text-red-400 flex justify-center cursor-pointer'>Disclaimer</p>
-                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">NDVI stands for Normalized Difference Vegetation Index. It is a widely used vegetation index in remote sensing to assess the health, density, and vigor of vegetation cover over large areas, such as agricultural fields, forests, and natural ecosystems.</span>
+                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-500 p-2 text-xs text-white group-hover:scale-100">NDVI stands for Normalized Difference Vegetation Index. It is a widely used vegetation index in remote sensing to assess the health, density, and vigor of vegetation cover over large areas, such as agricultural fields, forests, and natural ecosystems.</span>
                       </div>
                     </div> : ""
                   }
@@ -663,7 +663,7 @@ const PondDetails = ({onClose,pondId}) => {
                         <svg data-tooltip-target="tooltip-hover" data-tooltip-trigger="click" className="h-8 w-8 text-red-400 ml-[85%] relative cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={toggleTooltip}>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg><p className='text-red-400 flex justify-center cursor-pointer'>Disclaimer</p>
-                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">TSS stands for Total Suspended Solids. It refers to the concentration of solid particles that are suspended in water and are not dissolved. These particles can include both organic and inorganic matter, such as silt, clay, plankton, algae, and other debris.</span>
+                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-500 p-2 text-xs text-white group-hover:scale-100">TSS stands for Total Suspended Solids. It refers to the concentration of solid particles that are suspended in water and are not dissolved. These particles can include both organic and inorganic matter, such as silt, clay, plankton, algae, and other debris.</span>
                       </div>
                     </div> : ""
                   }
@@ -685,7 +685,7 @@ const PondDetails = ({onClose,pondId}) => {
                         <svg data-tooltip-target="tooltip-hover" data-tooltip-trigger="click" className="h-8 w-8 text-red-400 ml-[85%] relative cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={toggleTooltip}>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg><p className='text-red-400 flex justify-center cursor-pointer'>Disclaimer</p>
-                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">DO stands for Dissolved Oxygen. It refers to the amount of oxygen gas (O2) dissolved in water. Dissolved oxygen is essential for the survival of aquatic organisms, as it is required for respiration, metabolism, and other physiological processes.</span>
+                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-500 p-2 text-xs text-white group-hover:scale-100">DO stands for Dissolved Oxygen. It refers to the amount of oxygen gas (O2) dissolved in water. Dissolved oxygen is essential for the survival of aquatic organisms, as it is required for respiration, metabolism, and other physiological processes.</span>
                       </div>
                     </div> : ""
                   }
@@ -707,7 +707,7 @@ const PondDetails = ({onClose,pondId}) => {
                         <svg data-tooltip-target="tooltip-hover" data-tooltip-trigger="click" className="h-8 w-8 text-red-400 ml-[85%] relative cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={toggleTooltip}>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg><p className='text-red-400 flex justify-center cursor-pointer'>Disclaimer</p>
-                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-gray-700 group-hover:scale-100">Normalized Difference Water Index (NDWI) can refer to one of two remote sensing-derived indexes related to liquid water: to monitor changes in water content of leaves, and to monitor changes related to water content in water bodies.</span>
+                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-500 p-2 text-xs text-white group-hover:scale-100">Normalized Difference Water Index (NDWI) can refer to one of two remote sensing-derived indexes related to liquid water: to monitor changes in water content of leaves, and to monitor changes related to water content in water bodies.</span>
                       </div>
                     </div> : ""
                   }
@@ -729,7 +729,7 @@ const PondDetails = ({onClose,pondId}) => {
                         <svg data-tooltip-target="tooltip-hover" data-tooltip-trigger="click" className="h-8 w-8 text-red-400 ml-[85%] relative cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" onClick={toggleTooltip}>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg><p className='text-red-400 flex justify-center cursor-pointer'>Disclaimer</p>
-                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-gray-700 group-hover:scale-100">pH stands for "potential of hydrogen." It is a measure of the acidity or alkalinity of a solution, indicating the concentration of hydrogen ions (H+) present in the solution.</span>
+                        <span className="absolute top-10 scale-0 transition-all rounded bg-gray-500 p-2 text-xs text-white group-hover:scale-100">pH stands for "potential of hydrogen." It is a measure of the acidity or alkalinity of a solution, indicating the concentration of hydrogen ions (H+) present in the solution.</span>
                       </div>
                     </div> : ""
                   }

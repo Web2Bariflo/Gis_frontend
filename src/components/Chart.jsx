@@ -1,12 +1,13 @@
-import React, { useEffect , useRef } from 'react';
-import { Chart } from 'chart.js/auto'; // Import Chart directly from chart.js
+import React, { useEffect, useRef } from 'react';
+import { Chart } from 'chart.js/auto';
 
 const ChartComponent = ({ title, data, labels }) => {
     const chartRef = useRef(null);
 
     useEffect(() => {
-        // Check if data is available and it's an array before mapping
-        const chartData = Array.isArray(data) ? data.map(value => parseFloat(value).toFixed(2)) : [];
+        console.log(data);
+        // Use data directly without any conversion
+        const chartData = Array.isArray(data) ? data : [];
 
         const ctx = chartRef.current.getContext('2d');
         const chartInstance = new Chart(ctx, {
@@ -26,6 +27,25 @@ const ChartComponent = ({ title, data, labels }) => {
             options: {
                 responsive: false,
                 maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value; // Display the exact value without formatting
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.raw; // Display exact raw value in tooltip
+                            }
+                        }
+                    }
+                }
             },
         });
 
@@ -34,7 +54,7 @@ const ChartComponent = ({ title, data, labels }) => {
         };
     }, [data, labels, title]);
 
-    return <canvas ref={chartRef} style={{height: "300px"}} className="w-full"></canvas>;
+    return <canvas ref={chartRef} style={{ height: "300px" }} className="w-full"></canvas>;
 };
 
 export default ChartComponent;
