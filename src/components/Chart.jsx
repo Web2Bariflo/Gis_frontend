@@ -6,8 +6,10 @@ const ChartComponent = ({ title, data, labels }) => {
 
     useEffect(() => {
         console.log(data);
-        // Use data directly without any conversion
         const chartData = Array.isArray(data) ? data : [];
+
+        const minValue = Math.min(...chartData);
+        const maxValue = Math.max(...chartData);
 
         const ctx = chartRef.current.getContext('2d');
         const chartInstance = new Chart(ctx, {
@@ -26,14 +28,17 @@ const ChartComponent = ({ title, data, labels }) => {
             },
             options: {
                 responsive: false,
-                maintainAspectRatio: false,
+                maintainAspectRatio: true,
                 scales: {
                     y: {
-                        beginAtZero: true,
+                        beginAtZero: false,
+                        // min: minValue - (maxValue - minValue) * 0.1, // Add padding below the min value
+                        // max: maxValue + (maxValue - minValue) * 0.1, // Add padding above the max value
                         ticks: {
-                            callback: function(value) {
-                                return value; // Display the exact value without formatting
-                            }
+                            //callback: function(value) {
+                                //return value; // Display all tick values
+                            //},
+                            autoSkip: true
                         }
                     }
                 },
@@ -41,7 +46,7 @@ const ChartComponent = ({ title, data, labels }) => {
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                return context.raw; // Display exact raw value in tooltip
+                                return context.raw;
                             }
                         }
                     }
@@ -50,7 +55,7 @@ const ChartComponent = ({ title, data, labels }) => {
         });
 
         return () => {
-            chartInstance.destroy(); // Cleanup chart on unmount
+            chartInstance.destroy();
         };
     }, [data, labels, title]);
 
