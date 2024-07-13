@@ -192,7 +192,7 @@ const UserPageOne = () => {
                                             transition: 'box-shadow 0.3s ease-in-out',
                                           }} key={pond.id} onMouseEnter={() => setHoveredPondId(pond.id)}
                                           onMouseLeave={() => setHoveredPondId(null)}>
-                                            <button className="flex  justify-between align-middle items-center w-full" onClick={() => pondDetails(pond.id)} >
+                                            <button className="flex  justify-between align-middle items-center w-full hover:bg-gray-100" onClick={() => pondDetails(pond.id)} >
                                                 <div className="inline-block p-0 text-white rounded-lg w-28">
                                                     <img src={Aqua} alt="aqua" className='rounded-lg w-full h-20' />
                                                 </div>
